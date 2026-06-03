@@ -7,15 +7,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
+
 body{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
 background:radial-gradient(circle at center,#18121f 0%,#08070b 55%,#000 100%);
 font-family:'Cinzel',serif;
-overflow:hidden;
+overflow-x:hidden;
 }
+
 body::before{
 content:"";
 position:fixed;
@@ -25,15 +23,18 @@ background-size:6px 6px;
 opacity:.25;
 pointer-events:none;
 }
+
 .libro{
-width:92vw;
-height:90vh;
+width:780px;
+height:500px;
+margin:20px auto;
 position:relative;
 display:flex;
 background:linear-gradient(90deg,#09090b 0%,#050506 47%,#000 50%,#050506 53%,#09090b 100%);
-box-shadow:0 0 120px rgba(90,60,130,.18);
+box-shadow:0 0 80px rgba(90,60,130,.15);
 overflow:hidden;
 }
+
 .libro::after{
 content:"";
 position:absolute;
@@ -44,6 +45,7 @@ height:100%;
 transform:translateX(-50%);
 background:linear-gradient(to right,transparent,rgba(184,140,255,.25),transparent);
 }
+
 .pagina{
 flex:1;
 display:flex;
@@ -51,21 +53,24 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+padding:20px;
 }
+
 .foto{
-width:280px;
-height:380px;
+width:180px;
+height:240px;
 overflow:hidden;
 position:relative;
-margin-bottom:35px;
+margin-bottom:20px;
 transition:.4s;
-box-shadow:0 0 30px rgba(143,105,255,.15);
+box-shadow:0 0 20px rgba(143,105,255,.15);
 }
+
 .foto::before{
 content:"";
 position:absolute;
-width:420px;
-height:420px;
+width:280px;
+height:280px;
 background:radial-gradient(rgba(184,140,255,.08),transparent 70%);
 left:50%;
 top:50%;
@@ -73,57 +78,61 @@ transform:translate(-50%,-50%);
 z-index:-1;
 animation:haloFoto 6s ease-in-out infinite;
 }
+
 .foto:hover{
-transform:translateY(-5px);
-box-shadow:0 0 25px rgba(143,105,255,.4),0 0 80px rgba(143,105,255,.25);
+transform:translateY(-4px);
+box-shadow:0 0 20px rgba(143,105,255,.35);
 }
+
 .foto img{
 width:100%;
 height:100%;
 object-fit:cover;
 }
+
 .nombre{
-font-size:3rem;
+font-size:1.6rem;
 color:#f2edf7;
-margin-bottom:20px;
+margin-bottom:12px;
 }
-.nombre:hover{
-text-shadow:0 0 15px rgba(210,180,255,.5);
-}
+
 .casa{
 color:#9d73ff;
-letter-spacing:3px;
-margin-bottom:40px;
+letter-spacing:2px;
+margin-bottom:25px;
+font-size:.8rem;
 }
+
 .boton{
 text-decoration:none;
 color:#e8dfff;
 border:1px solid rgba(143,105,255,.3);
-padding:16px 42px;
+padding:12px 25px;
 background:rgba(255,255,255,.02);
 transition:.35s;
+font-size:.75rem;
 }
-.boton:hover{
-background:rgba(143,105,255,.08);
-box-shadow:0 0 20px rgba(143,105,255,.25);
-}
+
 .flecha{
 position:absolute;
-right:25px;
+right:15px;
 top:50%;
 transform:translateY(-50%);
 color:#b88cff;
 text-decoration:none;
-font-size:4rem;
+font-size:2.5rem;
 animation:flotar 2s ease-in-out infinite;
 }
+
 .cerrar{
 position:absolute;
-bottom:30px;
-left:30px;
+bottom:15px;
+left:15px;
 color:#8f69ff;
 text-decoration:none;
+font-size:.8rem;
 }
+
 .destello{
 position:fixed;
 color:#cdb9ea;
@@ -131,6 +140,7 @@ opacity:0;
 pointer-events:none;
 animation:destello 4s linear forwards;
 }
+
 .transicion{
 position:fixed;
 inset:0;
@@ -139,23 +149,29 @@ opacity:0;
 pointer-events:none;
 z-index:9999;
 }
+
 .transicion.activa{animation:abrir .8s forwards;}
+
 @keyframes haloFoto{
 0%,100%{opacity:.3;transform:translate(-50%,-50%) scale(.9);}
 50%{opacity:.7;transform:translate(-50%,-50%) scale(1.1);}
 }
+
 @keyframes flotar{
 0%,100%{transform:translateY(-50%);}
 50%{transform:translateY(-58%);}
 }
+
 @keyframes destello{
 20%{opacity:.8;}
 100%{opacity:0;transform:scale(1.8);}
 }
+
 @keyframes abrir{to{opacity:1;}}
 </style>
 </head>
 <body>
+
 <div class="libro">
 
 <div class="pagina">
@@ -204,5 +220,6 @@ setTimeout(()=>window.location.href=destino,700);
 });
 });
 </script>
+
 </body>
 </html>
