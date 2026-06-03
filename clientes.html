@@ -6,7 +6,7 @@
 
 <title>Grimorio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -26,42 +26,43 @@ body{
 
     background:
     radial-gradient(circle at center,
-    #2a143f 0%,
-    #12091f 40%,
-    #050308 100%);
+    #1d0d32 0%,
+    #0a0315 60%,
+    #000000 100%);
 
     font-family:'Cinzel', serif;
+
+    overflow:hidden;
 }
 
 /* LIBRO */
 
 .libro{
 
-    width:1200px;
-    height:800px;
-
-    background:
-    linear-gradient(
-    90deg,
-    #18111f 0%,
-    #21172d 45%,
-    #120c19 50%,
-    #21172d 55%,
-    #18111f 100%);
-
-    border:2px solid #7f59d8;
-
-    box-shadow:
-    0 0 100px rgba(127,89,216,.25);
+    width:92vw;
+    height:90vh;
 
     position:relative;
 
     display:flex;
 
-    overflow:hidden;
+    border:1px solid #8f69ff;
+
+    background:
+    linear-gradient(
+    90deg,
+    #170d26 0%,
+    #1f1431 47%,
+    #12091e 50%,
+    #1f1431 53%,
+    #170d26 100%);
+
+    box-shadow:
+    0 0 50px rgba(143,105,255,.15);
+
 }
 
-/* LOMO DEL LIBRO */
+/* LOMO */
 
 .libro::after{
 
@@ -72,12 +73,20 @@ body{
     left:50%;
     top:0;
 
-    width:3px;
+    width:6px;
     height:100%;
 
-    background:#7f59d8;
-
     transform:translateX(-50%);
+
+    background:
+    linear-gradient(
+    to right,
+    rgba(255,255,255,.03),
+    rgba(143,105,255,.6),
+    rgba(255,255,255,.03));
+
+    box-shadow:
+    0 0 25px rgba(143,105,255,.5);
 }
 
 /* PAGINAS */
@@ -93,25 +102,31 @@ body{
     align-items:center;
 
     text-align:center;
-
-    padding:60px;
 }
 
-/* FOTOS */
+/* RETRATOS */
 
 .foto{
 
     width:280px;
     height:380px;
 
-    border:1px solid #7f59d8;
+    border:1px solid #8f69ff;
 
     overflow:hidden;
 
-    margin-bottom:30px;
+    transition:.4s;
+
+    margin-bottom:35px;
+}
+
+.foto:hover{
 
     box-shadow:
-    0 0 25px rgba(127,89,216,.15);
+    0 0 20px rgba(143,105,255,.4),
+    0 0 50px rgba(143,105,255,.2);
+
+    transform:translateY(-4px);
 }
 
 .foto img{
@@ -126,97 +141,163 @@ body{
 
 .nombre{
 
-    color:#f3e9ff;
+    font-size:3rem;
 
-    font-size:2rem;
+    color:#f4eaff;
 
-    margin-bottom:10px;
+    margin-bottom:20px;
+
+    transition:.3s;
 }
+
+.nombre:hover{
+
+    text-shadow:
+    0 0 15px rgba(210,180,255,.7);
+}
+
+/* CASA */
 
 .casa{
 
-    color:#b88cff;
+    color:#9d73ff;
 
-    margin-bottom:30px;
+    letter-spacing:3px;
 
-    letter-spacing:2px;
+    margin-bottom:40px;
 }
 
-/* BOTÓN EXPEDIENTE */
+/* BOTÓN */
 
 .boton{
 
     text-decoration:none;
 
-    color:#f3e9ff;
+    color:white;
 
     border:1px solid #8f69ff;
 
-    padding:15px 35px;
+    padding:16px 42px;
 
-    transition:.3s;
+    transition:.35s;
 }
 
 .boton:hover{
 
-    background:rgba(143,105,255,.15);
+    background:rgba(143,105,255,.12);
 
     box-shadow:
-    0 0 20px rgba(143,105,255,.3);
+    0 0 10px #8f69ff,
+    0 0 30px rgba(143,105,255,.4);
+
+    transform:translateY(-3px);
 }
 
-/* CERRAR GRIMORIO */
-
-.cerrar{
-
-    position:absolute;
-
-    bottom:25px;
-    left:25px;
-
-    text-decoration:none;
-
-    color:#8f69ff;
-
-    font-size:.9rem;
-
-    letter-spacing:2px;
-}
-
-.cerrar:hover{
-
-    color:#e2d3ff;
-}
-
-/* FLECHA SIGUIENTE */
+/* FLECHA */
 
 .flecha{
 
     position:absolute;
 
-    top:50%;
     right:25px;
+
+    top:50%;
 
     transform:translateY(-50%);
 
-    text-decoration:none;
-
     color:#8f69ff;
+
+    text-decoration:none;
 
     font-size:4rem;
 
-    transition:.3s;
+    animation:flotar 2s ease-in-out infinite;
 
-    z-index:10;
+    transition:.3s;
 }
 
 .flecha:hover{
 
-    color:#e2d3ff;
+    color:#e6d8ff;
 
-    transform:
-    translateY(-50%)
-    scale(1.15);
+    text-shadow:
+    0 0 15px #b88cff,
+    0 0 30px #b88cff;
+}
+
+@keyframes flotar{
+
+    0%{
+        transform:translateY(-50%);
+    }
+
+    50%{
+        transform:translateY(-58%);
+    }
+
+    100%{
+        transform:translateY(-50%);
+    }
+}
+
+/* CERRAR */
+
+.cerrar{
+
+    position:absolute;
+
+    bottom:30px;
+
+    left:30px;
+
+    color:#8f69ff;
+
+    text-decoration:none;
+
+    font-size:.9rem;
+}
+
+.cerrar:hover{
+
+    color:#e6d8ff;
+}
+
+/* TRANSICIÓN */
+
+.transicion{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+    circle,
+    rgba(143,105,255,.6) 0%,
+    rgba(20,5,40,.95) 50%,
+    #000 100%);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:9999;
+}
+
+.transicion.activa{
+
+    animation:abrir .7s forwards;
+}
+
+@keyframes abrir{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
 }
 
 </style>
@@ -226,12 +307,10 @@ body{
 
 <div class="libro">
 
-    <!-- Amelia -->
-
     <div class="pagina">
 
         <div class="foto">
-            <img src="amelia.jpg" alt="Amelia Crawford">
+            <img src="amelia.jpg" alt="Amelia">
         </div>
 
         <div class="nombre">
@@ -239,21 +318,19 @@ body{
         </div>
 
         <div class="casa">
-            Ravenclaw
+            RAVENCLAW
         </div>
 
         <a href="amelia.html" class="boton">
-            Ver expediente
+            VER EXPEDIENTE
         </a>
 
     </div>
 
-    <!-- Vivi -->
-
     <div class="pagina">
 
         <div class="foto">
-            <img src="vivi.jpg" alt="Vivi Ornitier">
+            <img src="vivi.jpg" alt="Vivi">
         </div>
 
         <div class="nombre">
@@ -261,28 +338,53 @@ body{
         </div>
 
         <div class="casa">
-            Ravenclaw
+            RAVENCLAW
         </div>
 
         <a href="vivi.html" class="boton">
-            Ver expediente
+            VER EXPEDIENTE
         </a>
 
     </div>
 
-    <!-- Flecha a clientes2.html -->
-
-    <a href="clientes2.html" class="flecha">
-        ❯
-    </a>
-
-    <!-- Volver a portada -->
+    <a href="clientes2.html" class="flecha">❯</a>
 
     <a href="index.html" class="cerrar">
         ✦ Cerrar grimorio
     </a>
 
 </div>
+
+<div class="transicion" id="transicion"></div>
+
+<script>
+
+document.querySelectorAll('a').forEach(enlace => {
+
+    enlace.addEventListener('click', function(e){
+
+        const destino = this.getAttribute('href');
+
+        if(!destino) return;
+
+        e.preventDefault();
+
+        document
+        .getElementById('transicion')
+        .classList
+        .add('activa');
+
+        setTimeout(() => {
+
+            window.location.href = destino;
+
+        }, 650);
+
+    });
+
+});
+
+</script>
 
 </body>
 </html>
