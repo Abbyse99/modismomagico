@@ -61,7 +61,7 @@ body{
     overflow:hidden;
 }
 
-/* LOMO */
+/* LOMO DEL LIBRO */
 
 .libro::after{
 
@@ -109,6 +109,9 @@ body{
     overflow:hidden;
 
     margin-bottom:30px;
+
+    box-shadow:
+    0 0 25px rgba(127,89,216,.15);
 }
 
 .foto img{
@@ -119,7 +122,7 @@ body{
     object-fit:cover;
 }
 
-/* TEXTOS */
+/* NOMBRES */
 
 .nombre{
 
@@ -139,7 +142,7 @@ body{
     letter-spacing:2px;
 }
 
-/* BOTONES */
+/* BOTÓN EXPEDIENTE */
 
 .boton{
 
@@ -162,7 +165,7 @@ body{
     0 0 20px rgba(143,105,255,.3);
 }
 
-/* VOLVER */
+/* CERRAR GRIMORIO */
 
 .cerrar{
 
@@ -176,20 +179,23 @@ body{
     color:#8f69ff;
 
     font-size:.9rem;
+
+    letter-spacing:2px;
 }
 
 .cerrar:hover{
 
-    color:#d8c2ff;
+    color:#e2d3ff;
 }
 
-/* FLECHAS */
+/* FLECHA SIGUIENTE */
 
 .flecha{
 
     position:absolute;
 
     top:50%;
+    right:25px;
 
     transform:translateY(-50%);
 
@@ -197,28 +203,20 @@ body{
 
     color:#8f69ff;
 
-    font-size:3rem;
+    font-size:4rem;
 
     transition:.3s;
+
+    z-index:10;
 }
 
 .flecha:hover{
 
-    color:#d8c2ff;
+    color:#e2d3ff;
 
     transform:
     translateY(-50%)
     scale(1.15);
-}
-
-.izquierda{
-
-    left:20px;
-}
-
-.derecha{
-
-    right:20px;
 }
 
 </style>
@@ -228,15 +226,12 @@ body{
 
 <div class="libro">
 
-    <!-- Flechas -->
-    <a href="#" class="flecha izquierda">❮</a>
-    <a href="clientes2.html" class="flecha derecha">❯</a>
+    <!-- Amelia -->
 
-    <!-- Página izquierda -->
     <div class="pagina">
 
         <div class="foto">
-            <img src="amelia.jpg" alt="Amelia">
+            <img src="amelia.jpg" alt="Amelia Crawford">
         </div>
 
         <div class="nombre">
@@ -253,11 +248,12 @@ body{
 
     </div>
 
-    <!-- Página derecha -->
+    <!-- Vivi -->
+
     <div class="pagina">
 
         <div class="foto">
-            <img src="vivi.jpg" alt="Vivi">
+            <img src="vivi.jpg" alt="Vivi Ornitier">
         </div>
 
         <div class="nombre">
@@ -273,6 +269,14 @@ body{
         </a>
 
     </div>
+
+    <!-- Siguiente página -->
+
+    <a href="clientes2.html" class="flecha">
+        ❯
+    </a>
+
+    <!-- Volver a portada -->
 
     <a href="index.html" class="cerrar">
         ✦ Cerrar grimorio
