@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro de Encargos</title>
 
-<title>Modismo Mágico Daphne</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,53 +16,195 @@
 }
 
 body{
-    background:black;
-    overflow:hidden;
-}
-
-.portada{
-    position:relative;
-    width:100vw;
     height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    radial-gradient(circle at center,#24103f 0%,#09060f 60%);
+
+    font-family:'Cinzel',serif;
 }
 
-.portada img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
+.libro{
 
-/* Zona clicable sobre el botón del libro */
+    width:600px;
+    height:800px;
 
-.abrir-grimorio{
+    background:
+    linear-gradient(
+        135deg,
+        #1c1326,
+        #09060f
+    );
 
-    position:absolute;
+    border-radius:10px;
 
-    left:50%;
-    top:73%;
+    border:3px solid #8f69ff;
 
-    transform:translateX(-50%);
+    position:relative;
 
-    width:320px;
-    height:90px;
+    box-shadow:
+    0 0 50px rgba(143,105,255,.3),
+    inset 0 0 30px rgba(255,255,255,.05);
 
     cursor:pointer;
 
+    transition:.4s;
+
+    text-decoration:none;
+
+}
+
+.libro:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:
+    0 0 70px rgba(143,105,255,.6);
+
+}
+
+.esquina{
+
+    position:absolute;
+
+    width:80px;
+    height:80px;
+
+    border:2px solid #b88cff;
+}
+
+.esquina1{
+    top:20px;
+    left:20px;
+    border-right:none;
+    border-bottom:none;
+}
+
+.esquina2{
+    top:20px;
+    right:20px;
+    border-left:none;
+    border-bottom:none;
+}
+
+.esquina3{
+    bottom:20px;
+    left:20px;
+    border-right:none;
+    border-top:none;
+}
+
+.esquina4{
+    bottom:20px;
+    right:20px;
+    border-left:none;
+    border-top:none;
+}
+
+.contenido{
+
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:50px;
+}
+
+.simbolo{
+
+    font-size:5rem;
+    color:#b88cff;
+    margin-bottom:30px;
+}
+
+h1{
+
+    font-size:4rem;
+    line-height:1.1;
+
+    color:#e8d6ff;
+}
+
+.subtitulo{
+
+    margin-top:25px;
+
+    color:#b88cff;
+
+    letter-spacing:4px;
+}
+
+.frase{
+
+    margin-top:40px;
+
+    max-width:350px;
+
+    color:#c7b6e3;
+
+    line-height:1.8;
+}
+
+.boton{
+
+    margin-top:60px;
+
+    padding:18px 40px;
+
+    border:1px solid #8f69ff;
+
+    color:white;
+
+    letter-spacing:3px;
 }
 
 </style>
 </head>
-
 <body>
 
-<div class="portada">
+<a href="clientes.html" class="libro">
 
-    <!-- CAMBIA EL NOMBRE SI TU IMAGEN TIENE OTRO -->
-    <img src="portada.jpg.png" alt="Modismo Mágico Daphne">
+<div class="esquina esquina1"></div>
+<div class="esquina esquina2"></div>
+<div class="esquina esquina3"></div>
+<div class="esquina esquina4"></div>
 
-    <a href="clientes.html" class="abrir-grimorio"></a>
+<div class="contenido">
+
+<div class="simbolo">✦</div>
+
+<h1>
+REGISTRO<br>
+DE ENCARGOS
+</h1>
+
+<div class="subtitulo">
+MODISMO MÁGICO
+</div>
+
+<div class="frase">
+Cada puntada guarda una historia.
+Cada encargo merece su propio capítulo.
+</div>
+
+<div class="boton">
+ABRIR GRIMORIO
+</div>
 
 </div>
+
+</a>
 
 </body>
 </html>
