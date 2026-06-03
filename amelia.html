@@ -4,349 +4,168 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Amelia Crawford</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
-
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:
-    radial-gradient(circle at center,
-    #18121f 0%,
-    #08070b 55%,
-    #000000 100%);
-
-    font-family:'Cinzel', serif;
-    overflow:hidden;
+min-height:100vh;display:flex;justify-content:center;align-items:center;
+background:radial-gradient(circle at center,#18121f 0%,#08070b 55%,#000 100%);
+font-family:'Cinzel',serif;overflow:hidden;
 }
-
 body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-
-    background:
-    radial-gradient(
-    rgba(255,255,255,.02) 1px,
-    transparent 1px);
-
-    background-size:6px 6px;
-    opacity:.25;
-    pointer-events:none;
+content:"";position:fixed;inset:0;
+background:radial-gradient(rgba(255,255,255,.02) 1px,transparent 1px);
+background-size:6px 6px;opacity:.25;
 }
-
 .libro{
-    width:92vw;
-    height:90vh;
-
-    display:flex;
-    position:relative;
-
-    background:
-    linear-gradient(
-    90deg,
-    #09090b 0%,
-    #050506 47%,
-    #000000 50%,
-    #050506 53%,
-    #09090b 100%);
-
-    box-shadow:
-    0 0 120px rgba(90,60,130,.18);
-
-    overflow:hidden;
+width:92vw;height:90vh;display:flex;position:relative;overflow:hidden;
+background:linear-gradient(90deg,#09090b 0%,#050506 47%,#000 50%,#050506 53%,#09090b 100%);
+box-shadow:0 0 120px rgba(90,60,130,.18);
 }
-
 .libro::after{
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-    top:0;
-
-    width:4px;
-    height:100%;
-
-    transform:translateX(-50%);
-
-    background:
-    linear-gradient(
-    to right,
-    transparent,
-    rgba(184,140,255,.25),
-    transparent);
+content:"";position:absolute;left:50%;top:0;width:4px;height:100%;
+transform:translateX(-50%);
+background:linear-gradient(to right,transparent,rgba(184,140,255,.25),transparent);
 }
-
 .pagina{
-    flex:1;
-
-    display:flex;
-    flex-direction:column;
-
-    justify-content:center;
-    align-items:center;
-
-    padding:60px;
+flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:60px;
 }
-
-/* FOTO */
 
 .retrato{
-    width:100%;
-    max-width:720px;
-    height:420px;
-
-    overflow:hidden;
-
-    position:relative;
-
-    margin-bottom:35px;
-
-    box-shadow:
-    0 0 30px rgba(143,105,255,.15);
-}
-
-.retrato::before{
-    content:"";
-
-    position:absolute;
-
-    width:700px;
-    height:700px;
-
-    left:50%;
-    top:50%;
-
-    transform:
-    translate(-50%,-50%);
-
-    background:
-    radial-gradient(
-    rgba(184,140,255,.08),
-    transparent 70%);
-
-    animation:
-    halo 6s ease-in-out infinite;
+width:100%;max-width:720px;height:420px;
+position:relative;overflow:visible;margin-bottom:35px;
+animation:respirar 5s ease-in-out infinite;
 }
 
 .retrato img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    position:relative;
-    z-index:2;
+width:100%;height:100%;object-fit:cover;
+position:relative;z-index:5;border-radius:4px;
+box-shadow:0 0 40px rgba(160,100,255,.35);
+transition:1s;
 }
+
+.retrato:hover img{
+transform:scale(1.04);
+box-shadow:0 0 80px rgba(180,120,255,.6);
+}
+
+.humo{
+position:absolute;width:500px;height:500px;border-radius:50%;
+filter:blur(80px);opacity:.7;z-index:1;
+}
+
+.humo1{
+background:rgba(120,70,255,.25);
+top:-80px;left:-100px;
+animation:humo1 8s infinite alternate;
+}
+
+.humo2{
+background:rgba(50,0,100,.35);
+bottom:-120px;right:-120px;
+animation:humo2 10s infinite alternate;
+}
+
+.destelloGrande{
+position:absolute;color:#d7b8ff;font-size:28px;z-index:6;
+text-shadow:0 0 20px #b88cff,0 0 40px #b88cff;
+animation:parpadear 2s infinite;
+}
+
+.uno{top:20px;left:-20px;}
+.dos{top:50%;right:-20px;}
+.tres{bottom:20px;left:15%;}
 
 .nombre{
-    color:#f2edf7;
-
-    font-size:2.8rem;
-
-    text-align:center;
-
-    text-shadow:
-    0 0 10px rgba(184,140,255,.15);
+color:#f2edf7;font-size:2.8rem;text-align:center;
+text-shadow:0 0 10px rgba(184,140,255,.15);
 }
 
-/* EXPEDIENTE */
-
-.titulo{
-    color:#cdb9ea;
-
-    font-size:2rem;
-
-    margin-bottom:50px;
-
-    letter-spacing:3px;
-}
-
-.campo{
-    width:100%;
-    margin-bottom:35px;
-}
-
-.etiqueta{
-    color:#b88cff;
-
-    font-size:1rem;
-
-    letter-spacing:2px;
-
-    margin-bottom:10px;
-}
-
+.titulo{color:#cdb9ea;font-size:2rem;margin-bottom:50px;letter-spacing:3px;}
+.campo{width:100%;margin-bottom:35px;}
+.etiqueta{color:#b88cff;font-size:1rem;letter-spacing:2px;margin-bottom:10px;}
 .valor{
-    color:#f2edf7;
-
-    padding-bottom:10px;
-
-    border-bottom:
-    1px solid rgba(184,140,255,.2);
+color:#f2edf7;padding-bottom:10px;
+border-bottom:1px solid rgba(184,140,255,.2);
 }
-
-.notas{
-    margin-top:15px;
-
-    color:#f2edf7;
-
-    line-height:2.4;
-}
-
-.notas span{
-    color:#b88cff;
-}
-
-/* BOTONES */
+.notas{margin-top:15px;color:#f2edf7;line-height:2.4;}
 
 .flecha{
-    position:absolute;
-
-    left:25px;
-    top:50%;
-
-    transform:translateY(-50%);
-
-    color:#b88cff;
-
-    text-decoration:none;
-
-    font-size:4rem;
+position:absolute;left:25px;top:50%;
+transform:translateY(-50%);
+color:#b88cff;text-decoration:none;font-size:4rem;
 }
-
 .cerrar{
-    position:absolute;
-
-    bottom:30px;
-    left:30px;
-
-    color:#8f69ff;
-
-    text-decoration:none;
+position:absolute;bottom:30px;left:30px;
+color:#8f69ff;text-decoration:none;
 }
-
-/* DESTELLOS */
 
 .destello{
-    position:fixed;
-
-    color:#cdb9ea;
-
-    opacity:0;
-
-    pointer-events:none;
-
-    animation:
-    destello 4s linear forwards;
+position:fixed;color:#cdb9ea;opacity:0;
+pointer-events:none;animation:destello 4s linear forwards;
 }
 
-/* ANIMACIONES */
-
-@keyframes halo{
-
-    0%,100%{
-        opacity:.3;
-        transform:
-        translate(-50%,-50%)
-        scale(.9);
-    }
-
-    50%{
-        opacity:.7;
-        transform:
-        translate(-50%,-50%)
-        scale(1.1);
-    }
+@keyframes humo1{
+from{transform:translateX(-20px) translateY(0);}
+to{transform:translateX(40px) translateY(-30px);}
 }
-
+@keyframes humo2{
+from{transform:translateX(0) translateY(0);}
+to{transform:translateX(-50px) translateY(20px);}
+}
+@keyframes respirar{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.02);}
+}
+@keyframes parpadear{
+0%,100%{opacity:.2;}
+50%{opacity:1;}
+}
 @keyframes destello{
-
-    20%{
-        opacity:.8;
-    }
-
-    100%{
-        opacity:0;
-        transform:scale(1.8);
-    }
+20%{opacity:.8;}
+100%{opacity:0;transform:scale(1.8);}
 }
-
 </style>
 </head>
-
 <body>
 
 <div class="libro">
 
-    <!-- PÁGINA IZQUIERDA -->
+<div class="pagina">
 
-    <div class="pagina">
+<div class="retrato">
+<div class="humo humo1"></div>
+<div class="humo humo2"></div>
+<div class="destelloGrande uno">✦</div>
+<div class="destelloGrande dos">✦</div>
+<div class="destelloGrande tres">✦</div>
+<img src="amelia2.png" alt="Amelia Crawford">
+</div>
 
-        <div class="retrato">
-            <img src="amelia2.png" alt="Amelia Crawford">
-        </div>
+<div class="nombre">Amelia Crawford</div>
 
-        <div class="nombre">
-            Amelia Crawford
-        </div>
+</div>
 
-    </div>
+<div class="pagina">
 
-    <!-- PÁGINA DERECHA -->
+<div class="titulo">EXPEDIENTE</div>
 
-    <div class="pagina">
+<div class="campo">
+<div class="etiqueta">CASA DE HOGWARTS</div>
+<div class="valor">Ravenclaw</div>
+</div>
 
-        <div class="titulo">
-            EXPEDIENTE
-        </div>
+<div class="campo">
+<div class="etiqueta">ENCARGO</div>
+<div class="valor">&nbsp;</div>
+</div>
 
-        <div class="campo">
-            <div class="etiqueta">
-                CASA DE HOGWARTS
-            </div>
+<div class="campo">
+<div class="etiqueta">FECHA DE ENTREGA</div>
+<div class="valor">&nbsp;</div>
+</div>
 
-            <div class="valor">
-                Ravenclaw
-            </div>
-        </div>
-
-        <div class="campo">
-            <div class="etiqueta">
-                ENCARGO
-            </div>
-
-            <div class="valor">&nbsp;</div>
-        </div>
-
-        <div class="campo">
-            <div class="etiqueta">
-                FECHA DE ENCARGO
-                
-            </div>
-
-            <div class="valor">&nbsp;</div>
-        </div>
-
-        <div class="campo">
-
-            <div class="etiqueta">
-                NOTAS DE DAPHNE
-            </div>
-
-            <div class="notas">
+<div class="notas">
 
                 <span>✦</span>                    <br>
                 <span>✦</span>                    <br>
@@ -358,44 +177,23 @@ body::before{
         </div>
 
     </div>
-
-    <a href="clientes.html" class="flecha">❮</a>
-
-    <a href="index.html" class="cerrar">
-        ✦ Cerrar grimorio
-    </a>
+    
+<a href="clientes.html" class="flecha">❮</a>
+<a href="index.html" class="cerrar">✦ Cerrar grimorio</a>
 
 </div>
 
 <script>
-
-setInterval(() => {
-
-    const d = document.createElement('div');
-
-    d.className = 'destello';
-
-    d.innerHTML = '✦';
-
-    d.style.left =
-    Math.random()*window.innerWidth + 'px';
-
-    d.style.top =
-    Math.random()*window.innerHeight + 'px';
-
-    d.style.fontSize =
-    (10 + Math.random()*20) + 'px';
-
-    document.body.appendChild(d);
-
-    setTimeout(() => {
-
-        d.remove();
-
-    },4000);
-
+setInterval(()=>{
+const d=document.createElement('div');
+d.className='destello';
+d.innerHTML='✦';
+d.style.left=Math.random()*window.innerWidth+'px';
+d.style.top=Math.random()*window.innerHeight+'px';
+d.style.fontSize=(10+Math.random()*20)+'px';
+document.body.appendChild(d);
+setTimeout(()=>d.remove(),4000);
 },1200);
-
 </script>
 
 </body>
