@@ -1,210 +1,58 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Grimorio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:
-    radial-gradient(circle at center,
-    #2a143f 0%,
-    #12091f 40%,
-    #050308 100%);
-
-    font-family:'Cinzel', serif;
-}
-
-.libro{
-
-    width:1200px;
-    height:800px;
-
-    background:
-    linear-gradient(
-    90deg,
-    #18111f 0%,
-    #21172d 45%,
-    #120c19 50%,
-    #21172d 55%,
-    #18111f 100%);
-
-    border:2px solid #7f59d8;
-
-    box-shadow:
-    0 0 100px rgba(127,89,216,.25);
-
-    position:relative;
-
-    display:flex;
-
-    overflow:hidden;
-}
-
-.libro::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-    top:0;
-
-    width:3px;
-    height:100%;
-
-    background:#7f59d8;
-
-    transform:translateX(-50%);
-}
-
-.pagina{
-
-    flex:1;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    position:relative;
-}
-
-.marcador{
-
-    color:#5e4a8f;
-
-    font-size:1.2rem;
-
-    letter-spacing:4px;
-
-    opacity:.4;
-}
-
-/* Flecha izquierda */
-
-.flecha-izquierda{
-
-    position:absolute;
-
-    top:50%;
-    left:25px;
-
-    transform:translateY(-50%);
-
-    text-decoration:none;
-
-    color:#8f69ff;
-
-    font-size:4rem;
-
-    transition:.3s;
-
-    z-index:10;
-}
-
-.flecha-izquierda:hover{
-
-    color:#e2d3ff;
-
-    transform:
-    translateY(-50%)
-    scale(1.15);
-}
-
-/* Flecha derecha */
-
-.flecha-derecha{
-
-    position:absolute;
-
-    top:50%;
-    right:25px;
-
-    transform:translateY(-50%);
-
-    text-decoration:none;
-
-    color:#8f69ff;
-
-    font-size:4rem;
-
-    transition:.3s;
-
-    z-index:10;
-}
-
-.flecha-derecha:hover{
-
-    color:#e2d3ff;
-
-    transform:
-    translateY(-50%)
-    scale(1.15);
-}
-
-.cerrar{
-
-    position:absolute;
-
-    bottom:25px;
-    left:25px;
-
-    text-decoration:none;
-
-    color:#8f69ff;
-
-    font-size:.9rem;
-
-    letter-spacing:2px;
-}
-
-.cerrar:hover{
-
-    color:#e2d3ff;
-}
-
-</style>
-</head>
-
 <body>
 
 <div class="libro">
 
-    <div class="pagina">
-        <div class="marcador">
-            Página disponible
-        </div>
-    </div>
+    <!-- PAGINA IZQUIERDA -->
 
     <div class="pagina">
-        <div class="marcador">
-            Página disponible
+
+        <div style="
+            width:280px;
+            height:380px;
+            border:1px solid #8f69ff;
+            opacity:.25;
+            margin-bottom:35px;
+        ">
         </div>
+
+        <div class="nombre" style="
+            opacity:.25;
+            font-size:2rem;
+        ">
+            PÁGINA DISPONIBLE
+        </div>
+
     </div>
 
-    <a href="clientes.html" class="flecha-izquierda">
+    <!-- PAGINA DERECHA -->
+
+    <div class="pagina">
+
+        <div style="
+            width:280px;
+            height:380px;
+            border:1px solid #8f69ff;
+            opacity:.25;
+            margin-bottom:35px;
+        ">
+        </div>
+
+        <div class="nombre" style="
+            opacity:.25;
+            font-size:2rem;
+        ">
+            PÁGINA DISPONIBLE
+        </div>
+
+    </div>
+
+    <!-- VOLVER A CLIENTES -->
+
+    <a href="clientes.html" class="flecha" style="
+        left:25px;
+        right:auto;
+    ">
         ❮
-    </a>
-
-    <a href="clientes3.html" class="flecha-derecha">
-        ❯
     </a>
 
     <a href="index.html" class="cerrar">
@@ -213,5 +61,35 @@ body{
 
 </div>
 
+<div class="transicion" id="transicion"></div>
+
+<script>
+
+document.querySelectorAll('a').forEach(enlace => {
+
+    enlace.addEventListener('click', function(e){
+
+        const destino = this.getAttribute('href');
+
+        if(!destino) return;
+
+        e.preventDefault();
+
+        document
+        .getElementById('transicion')
+        .classList
+        .add('activa');
+
+        setTimeout(() => {
+
+            window.location.href = destino;
+
+        }, 650);
+
+    });
+
+});
+
+</script>
+
 </body>
-</html>
