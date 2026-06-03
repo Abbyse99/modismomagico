@@ -22,57 +22,66 @@ body{
     align-items:center;
 
     background:
-    radial-gradient(circle at center,#24103f 0%,#09060f 60%);
+    radial-gradient(circle at center,
+    #2a143f 0%,
+    #12091f 40%,
+    #050308 100%);
 
-    font-family:'Cinzel',serif;
+    font-family:'Cinzel', serif;
+    overflow:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background-image:
+    radial-gradient(
+    rgba(255,255,255,.03) 1px,
+    transparent 1px);
+
+    background-size:4px 4px;
+    pointer-events:none;
 }
 
 .libro{
-
-    width:600px;
-    height:800px;
+    width:650px;
+    height:850px;
 
     background:
     linear-gradient(
-        135deg,
-        #1c1326,
-        #09060f
-    );
+    135deg,
+    #1a0d24,
+    #07040d);
 
+    border:2px solid #7f59d8;
     border-radius:10px;
-
-    border:3px solid #8f69ff;
 
     position:relative;
 
     box-shadow:
-    0 0 50px rgba(143,105,255,.3),
-    inset 0 0 30px rgba(255,255,255,.05);
+    0 0 100px rgba(127,89,216,.25),
+    inset 0 0 60px rgba(255,255,255,.03);
 
     cursor:pointer;
-
     transition:.4s;
 
     text-decoration:none;
-
 }
 
 .libro:hover{
-
     transform:scale(1.02);
 
     box-shadow:
-    0 0 70px rgba(143,105,255,.6);
-
+    0 0 120px rgba(127,89,216,.4),
+    inset 0 0 60px rgba(255,255,255,.03);
 }
 
 .esquina{
-
     position:absolute;
-
     width:80px;
     height:80px;
-
     border:2px solid #b88cff;
 }
 
@@ -105,7 +114,6 @@ body{
 }
 
 .contenido{
-
     height:100%;
 
     display:flex;
@@ -115,62 +123,78 @@ body{
     align-items:center;
 
     text-align:center;
-
     color:white;
 
-    padding:50px;
+    padding:60px;
 }
 
-.simbolo{
-
-    font-size:5rem;
+.nombre{
     color:#b88cff;
-    margin-bottom:30px;
+    font-size:1.2rem;
+    letter-spacing:12px;
+    margin-bottom:25px;
 }
 
 h1{
+    font-size:4.5rem;
+    line-height:1;
 
-    font-size:4rem;
-    line-height:1.1;
+    color:#f3e9ff;
 
-    color:#e8d6ff;
+    text-shadow:
+    0 0 15px rgba(184,140,255,.2);
 }
 
 .subtitulo{
-
     margin-top:25px;
 
-    color:#b88cff;
+    color:#9b73ff;
 
-    letter-spacing:4px;
+    letter-spacing:8px;
+    font-size:.95rem;
+}
+
+.ornamento{
+    margin-top:35px;
+
+    color:#c8a7ff;
+
+    font-size:1.4rem;
+
+    letter-spacing:25px;
 }
 
 .frase{
-
     margin-top:40px;
 
-    max-width:350px;
+    color:#bca7d8;
 
-    color:#c7b6e3;
+    line-height:2;
 
-    line-height:1.8;
+    font-style:italic;
 }
 
 .boton{
-
     margin-top:60px;
-
-    padding:18px 40px;
 
     border:1px solid #8f69ff;
 
-    color:white;
+    padding:18px 50px;
 
-    letter-spacing:3px;
+    color:#e8dfff;
+
+    letter-spacing:5px;
+
+    transition:.3s;
+}
+
+.libro:hover .boton{
+    background:rgba(143,105,255,.15);
 }
 
 </style>
 </head>
+
 <body>
 
 <a href="clientes.html" class="libro">
@@ -182,7 +206,9 @@ h1{
 
 <div class="contenido">
 
-<div class="simbolo">✦</div>
+<div class="nombre">
+D A P H N E
+</div>
 
 <h1>
 REGISTRO<br>
@@ -193,9 +219,13 @@ DE ENCARGOS
 MODISMO MÁGICO
 </div>
 
+<div class="ornamento">
+✦ ✦ ✦
+</div>
+
 <div class="frase">
-Cada puntada guarda una historia.
-Cada encargo merece su propio capítulo.
+Cada puntada guarda un secreto.<br>
+Cada encargo permanece escrito.
 </div>
 
 <div class="boton">
