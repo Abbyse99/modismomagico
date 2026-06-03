@@ -7,9 +7,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
+margin:0;
+padding:20px 0;
+display:flex;
+justify-content:center;
+align-items:flex-start;
 background:radial-gradient(circle at center,#18121f 0%,#08070b 55%,#000 100%);
 font-family:'Cinzel',serif;
 overflow-x:hidden;
@@ -26,9 +35,8 @@ pointer-events:none;
 }
 
 .libro{
-width:780px;
+width:420px;
 height:500px;
-margin:20px auto;
 position:relative;
 text-decoration:none;
 overflow:hidden;
@@ -57,7 +65,14 @@ animation:latido 8s ease-in-out infinite;
 content:"";
 position:absolute;
 inset:0;
-background:radial-gradient(circle at center,rgba(100,70,160,.04),transparent 70%);
+
+background:
+radial-gradient(
+circle at center,
+rgba(100,70,160,.04),
+transparent 70%
+);
+
 pointer-events:none;
 }
 
@@ -80,7 +95,7 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:35px;
+padding:40px;
 position:relative;
 z-index:2;
 }
@@ -93,6 +108,7 @@ margin-bottom:20px;
 }
 
 h1{
+position:relative;
 font-size:3rem;
 line-height:1;
 color:#f0edf5;
@@ -117,7 +133,7 @@ margin-top:25px;
 color:#9f94ac;
 line-height:1.8;
 font-style:italic;
-font-size:.9rem;
+font-size:.85rem;
 }
 
 .boton{
@@ -128,7 +144,11 @@ color:#e8dfff;
 letter-spacing:4px;
 background:rgba(255,255,255,.02);
 transition:.35s;
-font-size:.85rem;
+font-size:.8rem;
+}
+
+.boton:hover{
+background:rgba(255,255,255,.04);
 }
 
 .particula{
@@ -157,18 +177,30 @@ animation:abrir 1s forwards;
 
 @keyframes latido{
 50%{
-box-shadow:0 0 50px rgba(0,0,0,.95),0 0 100px rgba(40,20,70,.2);
+box-shadow:
+0 0 50px rgba(0,0,0,.95),
+0 0 100px rgba(40,20,70,.2);
 }
 }
 
 @keyframes subir{
-0%{opacity:0;transform:translateY(0) scale(0);}
-20%{opacity:.25;}
-100%{opacity:0;transform:translateY(-350px) scale(1.2);}
+0%{
+opacity:0;
+transform:translateY(0) scale(0);
+}
+20%{
+opacity:.25;
+}
+100%{
+opacity:0;
+transform:translateY(-350px) scale(1.2);
+}
 }
 
 @keyframes abrir{
-to{opacity:1;}
+to{
+opacity:1;
+}
 }
 </style>
 </head>
@@ -195,6 +227,7 @@ Cada encargo permanece escrito.
 <div class="boton">ABRIR GRIMORIO</div>
 
 </div>
+
 </a>
 
 <div class="transicion" id="transicion"></div>
