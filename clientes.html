@@ -3,396 +3,206 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Grimorio</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
-
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
-
-    min-height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:
-    radial-gradient(circle at center,
-    #1d0d32 0%,
-    #0a0315 60%,
-    #000000 100%);
-
-    font-family:'Cinzel', serif;
-
-    overflow:hidden;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:radial-gradient(circle at center,#18121f 0%,#08070b 55%,#000 100%);
+font-family:'Cinzel',serif;
+overflow:hidden;
 }
-
-/* LIBRO */
-
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:radial-gradient(rgba(255,255,255,.02) 1px,transparent 1px);
+background-size:6px 6px;
+opacity:.25;
+pointer-events:none;
+}
 .libro{
-
-    width:92vw;
-    height:90vh;
-
-    position:relative;
-
-    display:flex;
-
-    border:1px solid #8f69ff;
-
-    background:
-    linear-gradient(
-    90deg,
-    #170d26 0%,
-    #1f1431 47%,
-    #12091e 50%,
-    #1f1431 53%,
-    #170d26 100%);
-
-    box-shadow:
-    0 0 50px rgba(143,105,255,.15);
-
+width:92vw;
+height:90vh;
+position:relative;
+display:flex;
+background:linear-gradient(90deg,#09090b 0%,#050506 47%,#000 50%,#050506 53%,#09090b 100%);
+box-shadow:0 0 120px rgba(90,60,130,.18);
+overflow:hidden;
 }
-
-/* LOMO */
-
 .libro::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-    top:0;
-
-    width:6px;
-    height:100%;
-
-    transform:translateX(-50%);
-
-    background:
-    linear-gradient(
-    to right,
-    rgba(255,255,255,.03),
-    rgba(143,105,255,.6),
-    rgba(255,255,255,.03));
-
-    box-shadow:
-    0 0 25px rgba(143,105,255,.5);
+content:"";
+position:absolute;
+left:50%;
+top:0;
+width:4px;
+height:100%;
+transform:translateX(-50%);
+background:linear-gradient(to right,transparent,rgba(184,140,255,.25),transparent);
 }
-
-/* PAGINAS */
-
 .pagina{
-
-    flex:1;
-
-    display:flex;
-    flex-direction:column;
-
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
+flex:1;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
 }
-
-/* RETRATOS */
-
 .foto{
-
-    width:280px;
-    height:380px;
-
-    border:1px solid #8f69ff;
-
-    overflow:hidden;
-
-    transition:.4s;
-
-    margin-bottom:35px;
+width:280px;
+height:380px;
+overflow:hidden;
+position:relative;
+margin-bottom:35px;
+transition:.4s;
+box-shadow:0 0 30px rgba(143,105,255,.15);
 }
-
+.foto::before{
+content:"";
+position:absolute;
+width:420px;
+height:420px;
+background:radial-gradient(rgba(184,140,255,.08),transparent 70%);
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+z-index:-1;
+animation:haloFoto 6s ease-in-out infinite;
+}
 .foto:hover{
-
-    box-shadow:
-    0 0 20px rgba(143,105,255,.4),
-    0 0 50px rgba(143,105,255,.2);
-
-    transform:translateY(-4px);
+transform:translateY(-5px);
+box-shadow:0 0 25px rgba(143,105,255,.4),0 0 80px rgba(143,105,255,.25);
 }
-
 .foto img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
+width:100%;
+height:100%;
+object-fit:cover;
 }
-
-/* NOMBRES */
-
 .nombre{
-
-    font-size:3rem;
-
-    color:#f4eaff;
-
-    margin-bottom:20px;
-
-    transition:.3s;
+font-size:3rem;
+color:#f2edf7;
+margin-bottom:20px;
 }
-
 .nombre:hover{
-
-    text-shadow:
-    0 0 15px rgba(210,180,255,.7);
+text-shadow:0 0 15px rgba(210,180,255,.5);
 }
-
-/* CASA */
-
 .casa{
-
-    color:#9d73ff;
-
-    letter-spacing:3px;
-
-    margin-bottom:40px;
+color:#9d73ff;
+letter-spacing:3px;
+margin-bottom:40px;
 }
-
-/* BOTÓN */
-
 .boton{
-
-    text-decoration:none;
-
-    color:white;
-
-    border:1px solid #8f69ff;
-
-    padding:16px 42px;
-
-    transition:.35s;
+text-decoration:none;
+color:#e8dfff;
+border:1px solid rgba(143,105,255,.3);
+padding:16px 42px;
+background:rgba(255,255,255,.02);
+transition:.35s;
 }
-
 .boton:hover{
-
-    background:rgba(143,105,255,.12);
-
-    box-shadow:
-    0 0 10px #8f69ff,
-    0 0 30px rgba(143,105,255,.4);
-
-    transform:translateY(-3px);
+background:rgba(143,105,255,.08);
+box-shadow:0 0 20px rgba(143,105,255,.25);
 }
-
-/* FLECHA */
-
 .flecha{
-
-    position:absolute;
-
-    right:25px;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    color:#8f69ff;
-
-    text-decoration:none;
-
-    font-size:4rem;
-
-    animation:flotar 2s ease-in-out infinite;
-
-    transition:.3s;
+position:absolute;
+right:25px;
+top:50%;
+transform:translateY(-50%);
+color:#b88cff;
+text-decoration:none;
+font-size:4rem;
+animation:flotar 2s ease-in-out infinite;
 }
-
-.flecha:hover{
-
-    color:#e6d8ff;
-
-    text-shadow:
-    0 0 15px #b88cff,
-    0 0 30px #b88cff;
-}
-
-@keyframes flotar{
-
-    0%{
-        transform:translateY(-50%);
-    }
-
-    50%{
-        transform:translateY(-58%);
-    }
-
-    100%{
-        transform:translateY(-50%);
-    }
-}
-
-/* CERRAR */
-
 .cerrar{
-
-    position:absolute;
-
-    bottom:30px;
-
-    left:30px;
-
-    color:#8f69ff;
-
-    text-decoration:none;
-
-    font-size:.9rem;
+position:absolute;
+bottom:30px;
+left:30px;
+color:#8f69ff;
+text-decoration:none;
 }
-
-.cerrar:hover{
-
-    color:#e6d8ff;
+.destello{
+position:fixed;
+color:#cdb9ea;
+opacity:0;
+pointer-events:none;
+animation:destello 4s linear forwards;
 }
-
-/* TRANSICIÓN */
-
 .transicion{
-
-    position:fixed;
-
-    inset:0;
-
-    background:
-    radial-gradient(
-    circle,
-    rgba(143,105,255,.6) 0%,
-    rgba(20,5,40,.95) 50%,
-    #000 100%);
-
-    opacity:0;
-
-    pointer-events:none;
-
-    z-index:9999;
+position:fixed;
+inset:0;
+background:radial-gradient(circle,rgba(120,90,170,.5) 0%,rgba(15,10,20,.95) 45%,#000 100%);
+opacity:0;
+pointer-events:none;
+z-index:9999;
 }
-
-.transicion.activa{
-
-    animation:abrir .7s forwards;
+.transicion.activa{animation:abrir .8s forwards;}
+@keyframes haloFoto{
+0%,100%{opacity:.3;transform:translate(-50%,-50%) scale(.9);}
+50%{opacity:.7;transform:translate(-50%,-50%) scale(1.1);}
 }
-
-@keyframes abrir{
-
-    from{
-        opacity:0;
-    }
-
-    to{
-        opacity:1;
-    }
+@keyframes flotar{
+0%,100%{transform:translateY(-50%);}
+50%{transform:translateY(-58%);}
 }
-
+@keyframes destello{
+20%{opacity:.8;}
+100%{opacity:0;transform:scale(1.8);}
+}
+@keyframes abrir{to{opacity:1;}}
 </style>
 </head>
-
 <body>
-
 <div class="libro">
 
-    <!-- AMELIA -->
+<div class="pagina">
+<div class="foto">
+<img src="amelia.jpeg" alt="Amelia Crawford">
+</div>
+<div class="nombre">Amelia Crawford</div>
+<div class="casa">RAVENCLAW</div>
+<a href="amelia.html" class="boton">VER EXPEDIENTE</a>
+</div>
 
-    <div class="pagina">
+<div class="pagina">
+<div class="foto">
+<img src="vivi.png" alt="Vivi Ornitier">
+</div>
+<div class="nombre">Vivi Ornitier</div>
+<div class="casa">RAVENCLAW</div>
+<a href="vivi.html" class="boton">VER EXPEDIENTE</a>
+</div>
 
-        <div class="foto">
-            <img src="amelia.jpeg" alt="Amelia Crawford">
-        </div>
-
-        <div class="nombre">
-            Amelia Crawford
-        </div>
-
-        <div class="casa">
-            RAVENCLAW
-        </div>
-
-        <a href="amelia.html" class="boton">
-            VER EXPEDIENTE
-        </a>
-
-    </div>
-
-    <!-- VIVI -->
-
-    <div class="pagina">
-
-        <div class="foto">
-            <img src="vivi.png" alt="Vivi Ornitier">
-        </div>
-
-        <div class="nombre">
-            Vivi Ornitier
-        </div>
-
-        <div class="casa">
-            RAVENCLAW
-        </div>
-
-        <a href="vivi.html" class="boton">
-            VER EXPEDIENTE
-        </a>
-
-    </div>
-
-    <!-- SIGUIENTE PÁGINA -->
-
-    <a href="clientes2.html" class="flecha">❯</a>
-
-    <!-- CERRAR -->
-
-    <a href="index.html" class="cerrar">
-        ✦ Cerrar grimorio
-    </a>
+<a href="clientes2.html" class="flecha">❯</a>
+<a href="index.html" class="cerrar">✦ Cerrar grimorio</a>
 
 </div>
 
 <div class="transicion" id="transicion"></div>
 
 <script>
+setInterval(()=>{
+const d=document.createElement('div');
+d.className='destello';
+d.innerHTML='✦';
+d.style.left=Math.random()*window.innerWidth+'px';
+d.style.top=Math.random()*window.innerHeight+'px';
+d.style.fontSize=(10+Math.random()*20)+'px';
+document.body.appendChild(d);
+setTimeout(()=>d.remove(),4000);
+},1200);
 
-document.querySelectorAll('a').forEach(enlace => {
-
-    enlace.addEventListener('click', function(e){
-
-        const destino = this.getAttribute('href');
-
-        if(!destino) return;
-
-        e.preventDefault();
-
-        document
-        .getElementById('transicion')
-        .classList
-        .add('activa');
-
-        setTimeout(() => {
-
-            window.location.href = destino;
-
-        }, 650);
-
-    });
-
+document.querySelectorAll('a').forEach(enlace=>{
+enlace.addEventListener('click',function(e){
+const destino=this.getAttribute('href');
+e.preventDefault();
+document.getElementById('transicion').classList.add('activa');
+setTimeout(()=>window.location.href=destino,700);
 });
-
+});
 </script>
-
 </body>
 </html>
