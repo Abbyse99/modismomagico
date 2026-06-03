@@ -2,47 +2,66 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Modismo Mágico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Modismo Mágico Daphne</title>
 
 <style>
 
-body{
-margin:0;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-
-background:url("portada.jpg") center center/cover no-repeat;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-a{
+body{
+    background:black;
+    overflow:hidden;
+}
 
-padding:20px 40px;
+.portada{
+    position:relative;
+    width:100vw;
+    height:100vh;
+}
 
-background:rgba(0,0,0,.6);
+.portada img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
 
-color:#d5b3ff;
+/* Zona clicable sobre el botón del libro */
 
-text-decoration:none;
+.abrir-grimorio{
 
-font-size:2rem;
+    position:absolute;
 
-border:1px solid #8a5cff;
+    left:50%;
+    top:73%;
 
-backdrop-filter:blur(5px);
+    transform:translateX(-50%);
+
+    width:320px;
+    height:90px;
+
+    cursor:pointer;
 
 }
 
 </style>
-
 </head>
 
 <body>
 
-<a href="clientes.html">
-ABRIR GRIMORIO
-</a>
+<div class="portada">
+
+    <!-- CAMBIA EL NOMBRE SI TU IMAGEN TIENE OTRO -->
+    <img src="portada.png" alt="Modismo Mágico Daphne">
+
+    <a href="clientes.html" class="abrir-grimorio"></a>
+
+</div>
 
 </body>
 </html>
