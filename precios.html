@@ -4,10 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tarifas - Modismo Mágico</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 html{
 min-height:100vh;
@@ -37,7 +42,14 @@ height:500px;
 margin:20px auto;
 position:relative;
 display:flex;
-background:linear-gradient(90deg,#09090b 0%,#050506 47%,#000 50%,#050506 53%,#09090b 100%);
+background:linear-gradient(
+90deg,
+#09090b 0%,
+#050506 47%,
+#000 50%,
+#050506 53%,
+#09090b 100%
+);
 box-shadow:0 0 80px rgba(90,60,130,.15);
 overflow:hidden;
 }
@@ -50,25 +62,69 @@ top:18px;
 width:4px;
 height:calc(100% - 18px);
 transform:translateX(-50%);
-background:linear-gradient(to right,transparent,rgba(184,140,255,.25),transparent);
+background:linear-gradient(
+to right,
+transparent,
+rgba(184,140,255,.25),
+transparent
+);
 }
 
-.pagina{flex:1;padding:28px;display:flex;flex-direction:column;}
-.titulo{text-align:center;margin-bottom:20px;}
-.simbolo{font-size:1.4rem;color:#c8b1ff;letter-spacing:12px;margin-bottom:8px;}
-h1{font-size:1.45rem;color:#f0edf5;}
-.sub{margin-top:6px;font-size:.7rem;letter-spacing:3px;color:#8f829d;}
+.pagina{
+flex:1;
+padding:28px;
+display:flex;
+flex-direction:column;
+}
 
-.izquierda .fila{flex:1;display:flex;align-items:center;justify-content:center;}
+.titulo{
+text-align:center;
+margin-bottom:20px;
+}
 
-.ticket img{
-width:210px;
-height:95px;
+.simbolo{
+font-size:1.4rem;
+color:#c8b1ff;
+letter-spacing:12px;
+margin-bottom:8px;
+}
+
+h1{
+font-size:1.45rem;
+color:#f0edf5;
+}
+
+.sub{
+margin-top:6px;
+font-size:.7rem;
+letter-spacing:3px;
+color:#8f829d;
+}
+
+/* IMAGEN VERTICAL */
+
+.imagen-vertical{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.imagen-vertical img{
+width:250px;
+height:380px;
 object-fit:cover;
+padding:6px;
+background:#050506;
 border:1px solid rgba(183,156,255,.15);
+box-shadow:0 0 25px rgba(183,156,255,.12);
 }
 
-.derecha .espacio-titulo{height:70px;}
+/* PAGINA DERECHA */
+
+.derecha .espacio-titulo{
+height:70px;
+}
 
 .introduccion{
 text-align:center;
@@ -97,7 +153,11 @@ color:#d7caef;
 margin-bottom:8px;
 }
 
-.precio{color:#b79cff;font-style:italic;font-size:.82rem;}
+.precio{
+color:#b79cff;
+font-style:italic;
+font-size:.82rem;
+}
 
 .cerrar{
 position:absolute;
@@ -106,6 +166,11 @@ left:15px;
 color:#8f69ff;
 text-decoration:none;
 font-size:.8rem;
+transition:.3s;
+}
+
+.cerrar:hover{
+color:#c8b1ff;
 }
 
 .destello{
@@ -117,53 +182,102 @@ animation:destello 4s linear forwards;
 }
 
 @keyframes destello{
-20%{opacity:.8;}
-100%{opacity:0;transform:scale(1.8);}
+20%{
+opacity:.8;
+}
+100%{
+opacity:0;
+transform:scale(1.8);
+}
+}
+
+@media(max-width:850px){
+
+.libro{
+width:95%;
+height:auto;
+flex-direction:column;
+}
+
+.libro::after{
+display:none;
+}
+
+.imagen-vertical img{
+width:220px;
+height:320px;
+margin-bottom:20px;
+}
 }
 </style>
 </head>
 <body>
 
 <div class="libro">
-<div class="pagina izquierda">
-<div class="titulo">
-<div class="simbolo">☾ ✦ ☽</div>
-<h1>TARIFAS</h1>
-<div class="sub">MODISMO MÁGICO</div>
-</div>
 
-<div class="fila"><div class="ticket"><img src="img1.jpg" alt=""></div></div>
-<div class="fila"><div class="ticket"><img src="img2.jpg" alt=""></div></div>
-<div class="fila"><div class="ticket"><img src="img3.jpg" alt=""></div></div>
-</div>
+    <div class="pagina izquierda">
 
-<div class="pagina derecha">
-<div class="espacio-titulo"></div>
+        <div class="titulo">
+            <div class="simbolo">☾ ✦ ☽</div>
+            <h1>TARIFAS</h1>
+            <div class="sub">MODISMO MÁGICO</div>
+        </div>
 
-<div class="introduccion">
-☾ Prendas encantadas con 4 mejoras ☽<br>
-Solicita a Daphne su catálogo exclusivo
-</div>
+        <div class="imagen-vertical">
+            <img src="medallon.jpg" alt="Prenda encantada">
+        </div>
 
-<div class="entrada"><h2>ALQUILER DURANTE 7 DÍAS</h2><div class="precio">✦ 8 Galeones</div></div>
-<div class="entrada"><h2>ALQUILER DURANTE 14 DÍAS</h2><div class="precio">✦ 15 Galeones</div></div>
-<div class="entrada"><h2>ALQUILER DURANTE 21 DÍAS</h2><div class="precio">✦ 20 Galeones</div></div>
-</div>
+    </div>
 
-<a href="index.html" class="cerrar">✦ Cerrar grimorio</a>
+    <div class="pagina derecha">
+
+        <div class="espacio-titulo"></div>
+
+        <div class="introduccion">
+            ☾ Prendas encantadas con 4 mejoras ☽<br>
+            Solicita a Daphne su catálogo exclusivo
+        </div>
+
+        <div class="entrada">
+            <h2>ALQUILER DURANTE 7 DÍAS</h2>
+            <div class="precio">✦ 8 Galeones</div>
+        </div>
+
+        <div class="entrada">
+            <h2>ALQUILER DURANTE 14 DÍAS</h2>
+            <div class="precio">✦ 15 Galeones</div>
+        </div>
+
+        <div class="entrada">
+            <h2>ALQUILER DURANTE 21 DÍAS</h2>
+            <div class="precio">✦ 20 Galeones</div>
+        </div>
+
+    </div>
+
+    <a href="index.html" class="cerrar">✦ Cerrar grimorio</a>
+
 </div>
 
 <script>
-setInterval(()=>{
-const d=document.createElement('div');
-d.className='destello';
-d.innerHTML='✦';
-d.style.left=Math.random()*window.innerWidth+'px';
-d.style.top=Math.random()*window.innerHeight+'px';
-d.style.fontSize=(10+Math.random()*20)+'px';
+setInterval(() => {
+
+const d = document.createElement('div');
+
+d.className = 'destello';
+d.innerHTML = '✦';
+
+d.style.left = Math.random() * window.innerWidth + 'px';
+d.style.top = Math.random() * window.innerHeight + 'px';
+d.style.fontSize = (10 + Math.random() * 20) + 'px';
+
 document.body.appendChild(d);
-setTimeout(()=>d.remove(),4000);
-},1200);
+
+setTimeout(() => {
+d.remove();
+}, 4000);
+
+}, 1200);
 </script>
 
 </body>
