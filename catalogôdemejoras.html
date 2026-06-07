@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catálogo de Mejoras</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+background:radial-gradient(circle at center,#18121f 0%,#08070b 55%,#000 100%);
+font-family:'Cinzel',serif;
+color:#f2edf7;
+overflow:hidden;
+padding:20px;
+}
+.runa{position:fixed;color:rgba(184,140,255,.12);font-size:20px;animation:flotar 18s linear infinite;pointer-events:none;}
+.grimorio{
+max-width:1000px;
+margin:auto;
+padding:35px;
+background:linear-gradient(180deg,#0c0a12 0%,#050506 100%);
+border:1px solid rgba(184,140,255,.12);
+box-shadow:0 0 100px rgba(120,90,170,.15);
+position:relative;
+overflow:hidden;
+}
+.grimorio::before{
+content:"☽ ✦ ⟡ ✦ ☾";
+position:absolute;
+font-size:160px;
+color:rgba(184,140,255,.03);
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+}
+.titulo-marco{text-align:center;margin-bottom:20px;}
+.simbolo{color:#cdb9ea;letter-spacing:4px;}
+h1{font-size:2rem;letter-spacing:5px;margin:8px 0;}
+.descripcion-general{
+max-width:850px;
+margin:0 auto 20px;
+text-align:center;
+line-height:1.6;
+font-size:.85rem;
+color:#cdb9ea;
+}
+.seleccion{
+margin-top:12px;
+padding:10px;
+font-size:.85rem;
+border:1px solid rgba(184,140,255,.15);
+background:rgba(184,140,255,.03);
+}
+.tabla{display:grid;grid-template-columns:240px 1fr;}
+.cabecera{
+padding:12px;
+border-bottom:1px solid rgba(184,140,255,.25);
+color:#b88cff;
+}
+.nombre{
+padding:14px 18px;
+border-bottom:1px solid rgba(184,140,255,.12);
+font-weight:600;
+}
+.descripcion{
+padding:14px 18px;
+border-bottom:1px solid rgba(184,140,255,.12);
+line-height:1.5;
+font-size:.85rem;
+}
+.rareza{
+display:inline-block;
+margin-top:6px;
+padding:2px 8px;
+border:1px solid rgba(184,140,255,.25);
+font-size:.6rem;
+color:#cdb9ea;
+}
+.aclaracion{
+font-size:.72rem;
+margin-top:8px;
+padding-left:10px;
+border-left:2px solid rgba(184,140,255,.25);
+color:rgba(242,237,247,.7);
+font-style:italic;
+}
+.boton{
+display:inline-block;
+margin-top:10px;
+padding:8px 14px;
+text-decoration:none;
+color:#e8dfff;
+border:1px solid rgba(184,140,255,.35);
+font-size:.7rem;
+}
+@keyframes flotar{
+0%{transform:translateY(110vh);opacity:0;}
+15%{opacity:1;}
+100%{transform:translateY(-150px);opacity:0;}
+}
+</style>
+</head>
+<body>
+<div class="runa" style="left:10%">☽</div>
+<div class="runa" style="left:25%;animation-delay:3s;">✦</div>
+<div class="runa" style="left:45%;animation-delay:7s;">⟡</div>
+<div class="runa" style="left:65%;animation-delay:10s;">☾</div>
+<div class="runa" style="left:85%;animation-delay:5s;">❈</div>
+
+<div class="grimorio">
+<div class="titulo-marco">
+<div class="simbolo">☽ ❈ ━━━━━━━ ✦ ━━━━━━━ ❈ ☾</div>
+<h1>CATÁLOGO DE MEJORAS</h1>
+<div class="simbolo">☽ ❈ ━━━━━━━ ✦ ━━━━━━━ ❈ ☾</div>
+</div>
+
+<div class="descripcion-general">
+Compendio de encantamientos actualmente dominados por Daphne Evans dentro de la disciplina de Modismo Mágico.
+<div class="seleccion">
+✦ Cada prenda encantada puede incorporar hasta <strong>cuatro mejoras</strong> escogidas libremente de entre las disponibles en este catálogo.
+</div>
+</div>
+
+<div class="tabla">
+<div class="cabecera">EFECTO</div><div class="cabecera">DESCRIPCIÓN</div>
+
+<div class="nombre">✦ TEJIDO REFORZADO<br><span class="rareza">COMÚN</span></div>
+<div class="descripcion">Otorga (CO × 1.5) + NIVEL de defensa degradable. Se restaura al inicio de cada turno.<div class="aclaracion">El valor de CO empleado corresponde al que figure actualmente en la ficha de Daphne Evans.</div><a href="https://hpc.forumcommunity.net/?t=63461626#entry472083560" target="_blank" class="boton">CONSULTAR FICHA</a></div>
+
+<div class="nombre">✦ COSTURA ÁGIL<br><span class="rareza">COMÚN</span></div>
+<div class="descripcion">+1 casilla de movimiento.<div class="aclaracion">Acumulable con otras prendas equipadas que posean Costura Ágil.</div></div>
+
+<div class="nombre">✦ HUECO OCULTO<br><span class="rareza">COMÚN</span></div>
+<div class="descripcion">Añade +1 hueco de equipamiento pequeño.<div class="aclaracion">Acumulable con otras prendas equipadas que posean Hueco Oculto.</div></div>
+
+<div class="nombre">✦ CAMUFLAJE<br><span class="rareza">COMÚN</span></div>
+<div class="descripcion">Una vez por combate, el portador puede activar Ocultación sin coste de PA. Se rompe al moverse más de 2 casillas o realizar una acción ofensiva.</div>
+
+<div class="nombre">✦ TEJIDO ANTIMAGIA<br><span class="rareza">COMÚN</span></div>
+<div class="descripcion">Reduce un 5% el daño mágico recibido tras aplicar defensas.<div class="aclaracion">No proporciona protección frente a daños físicos.</div></div>
+</div>
+</div>
+</body>
+</html>
