@@ -3,51 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Catálogo de Encargos</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<title>Tarifas - Modismo Mágico</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{display:flex;justify-content:center;align-items:center;min-height:100vh;padding:30px;background:radial-gradient(circle at center,#18121f 0%,#08070b 55%,#000 100%);font-family:'Cinzel',serif;overflow-x:hidden;}
-body::before{content:"";position:fixed;inset:0;background:radial-gradient(rgba(255,255,255,.02) 1px,transparent 1px);background-size:6px 6px;opacity:.2;pointer-events:none;}
-.grimorio{width:1000px;max-width:95vw;padding:50px;position:relative;overflow:hidden;background:linear-gradient(180deg,#131018 0%,#09080d 45%,#030304 100%);border:1px solid rgba(180,140,255,.08);box-shadow:0 0 30px rgba(0,0,0,.9),0 0 80px rgba(80,40,150,.25),inset 0 0 40px rgba(255,255,255,.02);border-radius:8px;}
-.grimorio::before{content:"";position:absolute;left:28px;top:0;width:16px;height:100%;background:linear-gradient(90deg,#000,#24182f,#3d2754,#24182f,#000);}
-.grimorio::after{content:"";position:absolute;inset:15px;border:1px solid rgba(255,255,255,.03);pointer-events:none;}
-.titulo{text-align:center;margin-bottom:50px;}
-.simbolo{font-size:1.8rem;color:#c8b1ff;letter-spacing:22px;margin-bottom:15px;}
-h1{font-size:2.6rem;color:#f0edf5;letter-spacing:4px;}
-.sub{margin-top:12px;font-size:.8rem;letter-spacing:5px;color:#8f829d;}
-.catalogo{display:grid;grid-template-columns:280px 1fr;gap:50px;}
-.imagenes{display:flex;flex-direction:column;gap:25px;}
-.ticket img{width:100%;display:block;border:1px solid rgba(183,156,255,.15);border-radius:4px;}
-.descripciones{display:flex;flex-direction:column;gap:35px;}
-.entrada{padding-left:25px;border-left:2px solid rgba(183,156,255,.2);}
-.entrada h2{font-size:1.1rem;letter-spacing:4px;color:#d7caef;margin-bottom:12px;}
-.entrada p{color:#9f94ac;line-height:1.8;font-size:.9rem;}
-.precio{margin-top:12px;color:#b79cff;font-style:italic;}
-.boton{display:block;width:max-content;margin:50px auto 0;padding:14px 35px;border:1px solid rgba(143,105,255,.18);background:rgba(255,255,255,.02);color:#e8dfff;letter-spacing:4px;text-decoration:none;}
-@media(max-width:800px){.catalogo{grid-template-columns:1fr;}}
+
+html{
+min-height:100vh;
+background:radial-gradient(circle at center,#18121f 0%,#08070b 55%,#000 100%);
+}
+
+body{
+min-height:100vh;
+background:transparent;
+font-family:'Cinzel',serif;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:radial-gradient(rgba(255,255,255,.02) 1px,transparent 1px);
+background-size:6px 6px;
+opacity:.25;
+pointer-events:none;
+}
+
+.libro{
+width:780px;
+height:500px;
+margin:20px auto;
+position:relative;
+display:flex;
+background:linear-gradient(90deg,#09090b 0%,#050506 47%,#000 50%,#050506 53%,#09090b 100%);
+box-shadow:0 0 80px rgba(90,60,130,.15);
+overflow:hidden;
+}
+
+.libro::after{
+content:"";
+position:absolute;
+left:50%;
+top:18px;
+width:4px;
+height:calc(100% - 18px);
+transform:translateX(-50%);
+background:linear-gradient(to right,transparent,rgba(184,140,255,.25),transparent);
+}
+
+.pagina{flex:1;padding:28px;display:flex;flex-direction:column;}
+.titulo{text-align:center;margin-bottom:20px;}
+.simbolo{font-size:1.4rem;color:#c8b1ff;letter-spacing:12px;margin-bottom:8px;}
+h1{font-size:1.45rem;color:#f0edf5;}
+.sub{margin-top:6px;font-size:.7rem;letter-spacing:3px;color:#8f829d;}
+
+.izquierda .fila{flex:1;display:flex;align-items:center;justify-content:center;}
+
+.ticket img{
+width:210px;
+height:95px;
+object-fit:cover;
+border:1px solid rgba(183,156,255,.15);
+}
+
+.derecha .espacio-titulo{height:70px;}
+
+.introduccion{
+text-align:center;
+color:#b79cff;
+font-size:.72rem;
+line-height:1.6;
+margin:0 20px 15px 20px;
+letter-spacing:2px;
+}
+
+.entrada{
+flex:1;
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding-left:22px;
+border-left:2px solid rgba(183,156,255,.2);
+margin-left:20px;
+margin-right:10px;
+}
+
+.entrada h2{
+font-size:.85rem;
+letter-spacing:2px;
+color:#d7caef;
+margin-bottom:8px;
+}
+
+.precio{color:#b79cff;font-style:italic;font-size:.82rem;}
+
+.cerrar{
+position:absolute;
+bottom:15px;
+left:15px;
+color:#8f69ff;
+text-decoration:none;
+font-size:.8rem;
+}
+
+.destello{
+position:fixed;
+color:#cdb9ea;
+opacity:0;
+pointer-events:none;
+animation:destello 4s linear forwards;
+}
+
+@keyframes destello{
+20%{opacity:.8;}
+100%{opacity:0;transform:scale(1.8);}
+}
 </style>
 </head>
 <body>
-<div class="grimorio">
+
+<div class="libro">
+<div class="pagina izquierda">
 <div class="titulo">
 <div class="simbolo">☾ ✦ ☽</div>
-<h1>CATÁLOGO DE ENCARGOS</h1>
+<h1>TARIFAS</h1>
 <div class="sub">MODISMO MÁGICO</div>
 </div>
-<div class="catalogo">
-<div class="imagenes">
-<div class="ticket"><img src="img1.jpg"></div>
-<div class="ticket"><img src="img2.jpg"></div>
-<div class="ticket"><img src="img3.jpg"></div>
+
+<div class="fila"><div class="ticket"><img src="img1.jpg" alt=""></div></div>
+<div class="fila"><div class="ticket"><img src="img2.jpg" alt=""></div></div>
+<div class="fila"><div class="ticket"><img src="img3.jpg" alt=""></div></div>
 </div>
-<div class="descripciones">
-<div class="entrada"><h2>CONFECCIÓN BÁSICA</h2><p>Prendas sencillas adaptadas a cada cliente.</p><div class="precio">✦ Desde 10 Galeones</div></div>
-<div class="entrada"><h2>CONFECCIÓN ELABORADA</h2><p>Diseños detallados con bordados y acabados especiales.</p><div class="precio">✦ Desde 20 Galeones</div></div>
-<div class="entrada"><h2>ENCARGO EXCLUSIVO</h2><p>Creaciones completamente personalizadas.</p><div class="precio">✦ Precio a consultar</div></div>
+
+<div class="pagina derecha">
+<div class="espacio-titulo"></div>
+
+<div class="introduccion">
+☾ Prendas encantadas con 4 mejoras ☽<br>
+Solicita a Daphne su catálogo exclusivo
 </div>
+
+<div class="entrada"><h2>ALQUILER DURANTE 7 DÍAS</h2><div class="precio">✦ 8 Galeones</div></div>
+<div class="entrada"><h2>ALQUILER DURANTE 14 DÍAS</h2><div class="precio">✦ 15 Galeones</div></div>
+<div class="entrada"><h2>ALQUILER DURANTE 21 DÍAS</h2><div class="precio">✦ 20 Galeones</div></div>
 </div>
-<a href="clientes.html" class="boton">CONTINUAR AL REGISTRO</a>
+
+<a href="index.html" class="cerrar">✦ Cerrar grimorio</a>
 </div>
+
+<script>
+setInterval(()=>{
+const d=document.createElement('div');
+d.className='destello';
+d.innerHTML='✦';
+d.style.left=Math.random()*window.innerWidth+'px';
+d.style.top=Math.random()*window.innerHeight+'px';
+d.style.fontSize=(10+Math.random()*20)+'px';
+document.body.appendChild(d);
+setTimeout(()=>d.remove(),4000);
+},1200);
+</script>
+
 </body>
 </html>
