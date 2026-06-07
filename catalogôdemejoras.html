@@ -7,34 +7,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
+
 body{
 background:radial-gradient(circle at center,#141018 0%,#070609 60%,#000 100%);
 font-family:'Cinzel',serif;
 color:#f2edf7;
-padding:10px;
+padding:12px;
 }
 
 .grimorio{
-max-width:980px;
+max-width:850px;
 margin:auto;
-padding:22px;
+padding:24px;
 background:linear-gradient(180deg,#0a0910,#050506);
 border:1px solid rgba(184,140,255,.12);
 box-shadow:0 0 80px rgba(120,90,170,.12);
 position:relative;
 }
 
-.esquina{position:absolute;color:rgba(184,140,255,.18);font-size:20px;}
+.esquina{position:absolute;color:rgba(184,140,255,.18);font-size:18px;}
 .e1{top:8px;left:8px;}
 .e2{top:8px;right:8px;}
 .e3{bottom:8px;left:8px;}
 .e4{bottom:8px;right:8px;}
 
-.titulo-marco{text-align:center;margin-bottom:10px;}
-.simbolo{color:#cdb9ea;letter-spacing:3px;font-size:.85rem;}
+.titulo-marco{text-align:center;margin-bottom:12px;}
+.simbolo{color:#cdb9ea;letter-spacing:3px;font-size:.8rem;}
 
 h1{
-font-size:1.7rem;
+font-size:1.8rem;
 letter-spacing:4px;
 margin:4px 0;
 color:#f5f0ff;
@@ -45,22 +46,22 @@ text-shadow:
 }
 
 .descripcion-general{
-max-width:850px;
+max-width:760px;
 margin:0 auto;
-text-align:center;
-line-height:1.4;
-font-size:.8rem;
+text-align:justify;
+line-height:1.6;
+font-size:.75rem;
 color:#cdb9ea;
 }
 
 .tarifas-wrap{
 text-align:center;
-margin:15px 0;
+margin:18px 0;
 }
 
 .boton-tarifas{
 display:inline-block;
-padding:14px 42px;
+padding:15px 45px;
 text-decoration:none;
 color:#fff;
 font-size:.9rem;
@@ -68,7 +69,7 @@ letter-spacing:3px;
 font-weight:600;
 background:linear-gradient(180deg,rgba(90,60,140,.95),rgba(45,28,75,.95));
 border:1px solid rgba(220,190,255,.35);
-border-radius:3px;
+border-radius:4px;
 box-shadow:
 0 0 12px rgba(184,140,255,.25),
 0 0 25px rgba(184,140,255,.15),
@@ -78,59 +79,64 @@ transition:.25s ease;
 
 .boton-tarifas:hover{
 transform:translateY(-2px);
-color:#fff;
 box-shadow:
 0 0 18px rgba(184,140,255,.45),
 0 0 40px rgba(184,140,255,.25),
 inset 0 0 12px rgba(255,255,255,.12);
-border-color:rgba(230,210,255,.6);
 }
 
-.seleccion,.registro{
-margin-top:8px;
-padding:8px 10px;
+.registro{
+margin-top:10px;
+padding:12px 16px;
 border:1px solid rgba(184,140,255,.12);
 background:rgba(184,140,255,.03);
-font-size:.78rem;
-line-height:1.5;
+font-size:.75rem;
+line-height:1.65;
+text-align:justify;
 }
 
 .registro-titulo{
 text-align:center;
-margin-bottom:6px;
+margin-bottom:8px;
 color:#d7b8ff;
 }
 
 .tabla{
 display:grid;
-grid-template-columns:220px 1fr;
-margin-top:12px;
+grid-template-columns:170px 1fr;
+margin-top:16px;
 }
 
 .cabecera{
-padding:8px 10px;
+padding:10px;
 border-bottom:1px solid rgba(184,140,255,.25);
 color:#b88cff;
-font-size:.8rem;
+font-size:.75rem;
+text-align:center;
 }
 
 .nombre{
-padding:10px 14px;
+padding:10px;
 border-bottom:1px solid rgba(184,140,255,.12);
 font-weight:600;
 color:#e7dbff;
-font-size:.8rem;
+font-size:.75rem;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
 .descripcion{
-padding:10px 14px;
+padding:10px 12px;
 border-bottom:1px solid rgba(184,140,255,.12);
-line-height:1.35;
-font-size:.78rem;
+line-height:1.5;
+font-size:.75rem;
+text-align:justify;
 }
 
 .aclaracion{
-font-size:.68rem;
+font-size:.65rem;
 margin-top:6px;
 padding-left:8px;
 border-left:2px solid rgba(184,140,255,.25);
