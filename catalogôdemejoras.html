@@ -7,128 +7,115 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-
 body{
 background:radial-gradient(circle at center,#141018 0%,#070609 60%,#000 100%);
 font-family:'Cinzel',serif;
 color:#f2edf7;
-padding:20px;
-}
-
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at 20% 30%, rgba(90,60,130,.08), transparent 40%),
-radial-gradient(circle at 80% 70%, rgba(40,20,70,.12), transparent 45%);
-pointer-events:none;
+padding:10px;
 }
 
 .grimorio{
-max-width:1000px;
+max-width:980px;
 margin:auto;
-padding:35px;
-position:relative;
-background:
-radial-gradient(circle at 20% 30%, rgba(90,60,130,.08), transparent 40%),
-radial-gradient(circle at 80% 70%, rgba(40,20,70,.12), transparent 45%),
-linear-gradient(180deg,#0a0910,#050506);
+padding:22px;
+background:linear-gradient(180deg,#0a0910,#050506);
 border:1px solid rgba(184,140,255,.12);
-box-shadow:0 0 100px rgba(120,90,170,.15);
+box-shadow:0 0 80px rgba(120,90,170,.12);
+position:relative;
 }
 
-.esquina{
-position:absolute;
-color:rgba(184,140,255,.18);
-font-size:24px;
-}
+.esquina{position:absolute;color:rgba(184,140,255,.18);font-size:20px;}
+.e1{top:8px;left:8px;}
+.e2{top:8px;right:8px;}
+.e3{bottom:8px;left:8px;}
+.e4{bottom:8px;right:8px;}
 
-.e1{top:12px;left:12px;}
-.e2{top:12px;right:12px;}
-.e3{bottom:12px;left:12px;}
-.e4{bottom:12px;right:12px;}
-
-.titulo-marco{text-align:center;margin-bottom:18px;}
-.simbolo{color:#cdb9ea;letter-spacing:4px;}
+.titulo-marco{text-align:center;margin-bottom:10px;}
+.simbolo{color:#cdb9ea;letter-spacing:3px;font-size:.85rem;}
 
 h1{
-font-size:2rem;
-letter-spacing:5px;
-margin:8px 0;
+font-size:1.7rem;
+letter-spacing:4px;
+margin:4px 0;
 color:#f5f0ff;
 text-shadow:
-0 0 10px rgba(184,140,255,.5),
-0 0 25px rgba(184,140,255,.3),
-0 0 50px rgba(0,0,0,.9),
-0 0 80px rgba(0,0,0,1);
+0 0 8px rgba(184,140,255,.4),
+0 0 20px rgba(184,140,255,.2),
+0 0 40px rgba(0,0,0,.8);
 }
 
 .descripcion-general{
 max-width:850px;
-margin:0 auto 20px;
+margin:0 auto;
 text-align:center;
-line-height:1.6;
-font-size:.85rem;
+line-height:1.4;
+font-size:.8rem;
 color:#cdb9ea;
 }
 
-.seleccion,
-.registro{
-margin-top:12px;
-padding:12px;
-border:1px solid rgba(184,140,255,.15);
+.tarifas-wrap{
+text-align:center;
+margin:15px 0;
+}
+
+.boton-tarifas{
+display:inline-block;
+padding:10px 28px;
+text-decoration:none;
+color:#e8e0f2;
+font-size:.8rem;
+letter-spacing:2px;
+background:rgba(15,10,20,.9);
+border:1px solid rgba(184,140,255,.18);
+}
+
+.seleccion,.registro{
+margin-top:8px;
+padding:8px 10px;
+border:1px solid rgba(184,140,255,.12);
 background:rgba(184,140,255,.03);
+font-size:.78rem;
+line-height:1.5;
 }
 
 .registro-titulo{
 text-align:center;
+margin-bottom:6px;
 color:#d7b8ff;
-letter-spacing:3px;
-margin-bottom:12px;
-font-weight:600;
-text-shadow:0 0 10px rgba(184,140,255,.25);
-}
-
-.registro-texto{
-font-size:.82rem;
-line-height:1.8;
-color:#d9d2e5;
 }
 
 .tabla{
 display:grid;
-grid-template-columns:240px 1fr;
-margin-top:20px;
+grid-template-columns:220px 1fr;
+margin-top:12px;
 }
 
 .cabecera{
-padding:12px;
+padding:8px 10px;
 border-bottom:1px solid rgba(184,140,255,.25);
 color:#b88cff;
+font-size:.8rem;
 }
 
 .nombre{
-padding:14px 18px;
+padding:10px 14px;
 border-bottom:1px solid rgba(184,140,255,.12);
 font-weight:600;
 color:#e7dbff;
-text-shadow:
-0 0 8px rgba(184,140,255,.25),
-2px 2px 10px rgba(0,0,0,.9);
+font-size:.8rem;
 }
 
 .descripcion{
-padding:14px 18px;
+padding:10px 14px;
 border-bottom:1px solid rgba(184,140,255,.12);
-line-height:1.5;
-font-size:.85rem;
+line-height:1.35;
+font-size:.78rem;
 }
 
 .aclaracion{
-font-size:.72rem;
-margin-top:8px;
-padding-left:10px;
+font-size:.68rem;
+margin-top:6px;
+padding-left:8px;
 border-left:2px solid rgba(184,140,255,.25);
 color:rgba(242,237,247,.7);
 font-style:italic;
@@ -145,65 +132,53 @@ font-style:italic;
 <div class="esquina e4">❈</div>
 
 <div class="titulo-marco">
-<div class="simbolo">☽ ❈ ━━━━━━━ ✦ ━━━━━━━ ❈ ☾</div>
+<div class="simbolo">☽ ❈ ━━━━━ ✦ ━━━━━ ❈ ☾</div>
 <h1>CATÁLOGO DE MEJORAS</h1>
-<div class="simbolo">☽ ❈ ━━━━━━━ ✦ ━━━━━━━ ❈ ☾</div>
+<div class="simbolo">☽ ❈ ━━━━━ ✦ ━━━━━ ❈ ☾</div>
 </div>
 
 <div class="descripcion-general">
-Compendio de encantamientos actualmente dominados por Daphne Evans dentro de la disciplina de Modismo Mágico.
+Compendio de encantamientos actualmente dominados por Daphne Evans dentro de la disciplina de Modismo Mágico.<br>
+Cada prenda encantada puede incorporar hasta cuatro mejoras escogidas libremente de entre las disponibles en este catálogo.
 </div>
 
-<div class="seleccion">
-✦ Cada prenda encantada puede incorporar hasta <strong>cuatro mejoras</strong> escogidas libremente de entre las disponibles en este catálogo.
+<div class="tarifas-wrap">
+<a href="https://abbyse99.github.io/modismomagico/precios.html" class="boton-tarifas">TARIFAS</a>
 </div>
 
 <div class="registro">
 <div class="registro-titulo">✦ REGISTRO DE PRENDAS ✦</div>
-
-<div class="registro-texto">
-Cada prenda encantada debe estar registrada en la ficha del modista y en la ficha del receptor, además de un roleo breve registrado en el registro de heridas y acciones indicando las mejoras aplicadas.
-
-<br><br>
-
+Cada prenda encantada debe estar registrada en la ficha del modista y en la ficha del receptor, además de un roleo breve registrado en el registro de heridas y acciones indicando las mejoras aplicadas.<br><br>
 Las prendas encantadas pueden ser robadas siguiendo las reglas del sistema de combate; al ser robada, el slot no se libera.
-</div>
 </div>
 
 <div class="tabla">
-
 <div class="cabecera">EFECTO</div>
 <div class="cabecera">DESCRIPCIÓN</div>
 
 <div class="nombre">✦ TEJIDO REFORZADO</div>
-<div class="descripcion">
-Otorga (CO × 1.5) + NIVEL de defensa degradable. Se restaura al inicio de cada turno propio del portador.
-<div class="aclaracion">El valor de CO empleado será el que posea Daphne Evans al realizar el encantamiento y será confirmado al cliente durante la compra.</div>
-</div>
+<div class="descripcion">Otorga (CO × 1.5) + NIVEL de defensa degradable.
+<div class="aclaracion">El valor de CO empleado será el que posea Daphne Evans al realizar el encantamiento y será confirmado al cliente durante la compra.</div></div>
 
 <div class="nombre">✦ COSTURA ÁGIL</div>
 <div class="descripcion">+1 casilla de movimiento.
-<div class="aclaracion">Acumulable con otras prendas equipadas que posean Costura Ágil.</div>
-</div>
+<div class="aclaracion">Acumulable con otras prendas equipadas que posean Costura Ágil.</div></div>
 
 <div class="nombre">✦ HUECO OCULTO</div>
 <div class="descripcion">Añade +1 hueco de equipamiento pequeño.
-<div class="aclaracion">Acumulable con otras prendas equipadas que posean Hueco Oculto.</div>
-</div>
+<div class="aclaracion">Acumulable con otras prendas equipadas que posean Hueco Oculto.</div></div>
 
 <div class="nombre">✦ CAMUFLAJE</div>
-<div class="descripcion">Una vez por combate, el portador puede activar Ocultación sin coste de PA. Se rompe al moverse más de 2 casillas o realizar una acción ofensiva.</div>
+<div class="descripcion">Una vez por combate, el portador puede activar Ocultación sin coste de PA.</div>
 
 <div class="nombre">✦ TEJIDO ANTIMAGIA</div>
-<div class="descripcion">Reduce un 5% el daño mágico recibido tras aplicar defensas.
-<div class="aclaracion">No proporciona protección frente a daños físicos.</div>
-</div>
+<div class="descripcion">Reduce un 5% el daño mágico recibido.
+<div class="aclaracion">No proporciona protección frente a daños físicos.</div></div>
 
 <div class="nombre">✦ MÁS MEJORAS PRÓXIMAMENTE</div>
-<div class="descripcion">Nuevos encantamientos serán incorporados al catálogo conforme Daphne Evans continúe ampliando sus conocimientos en Modismo Mágico.</div>
-
-</div>
+<div class="descripcion">Nuevos encantamientos serán incorporados al catálogo conforme Daphne Evans continúe ampliando sus conocimientos.</div>
 </div>
 
+</div>
 </body>
 </html>
