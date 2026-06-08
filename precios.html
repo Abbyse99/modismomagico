@@ -12,7 +12,7 @@
 body{
 background:radial-gradient(circle at center,#18121f 0%,#08070b 55%,#000 100%);
 font-family:'Cinzel',serif;
-overflow-x:hidden;
+overflow:hidden;
 }
 
 body::before{
@@ -34,6 +34,7 @@ display:flex;
 background:linear-gradient(90deg,#09090b 0%,#050506 47%,#000 50%,#050506 53%,#09090b 100%);
 box-shadow:0 0 80px rgba(90,60,130,.15);
 overflow:hidden;
+z-index:2;
 }
 
 .libro::after{
@@ -62,12 +63,58 @@ height:420px;
 display:flex;
 align-items:center;
 justify-content:center;
+position:relative;
+overflow:hidden;
 }
 
 .foto img{
 width:100%;
 height:100%;
 object-fit:contain;
+animation:brilloMedallon 4s ease-in-out infinite;
+filter:
+drop-shadow(0 0 8px rgba(183,156,255,.15))
+drop-shadow(0 0 20px rgba(183,156,255,.12));
+}
+
+.foto::after{
+content:"";
+position:absolute;
+top:-20%;
+left:-80%;
+width:40%;
+height:140%;
+transform:rotate(20deg);
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.05),
+rgba(255,255,255,.35),
+rgba(255,255,255,.05),
+transparent
+);
+animation:reflejo 5s ease-in-out infinite;
+pointer-events:none;
+}
+
+@keyframes reflejo{
+0%{left:-80%;opacity:0;}
+15%{opacity:1;}
+35%{left:140%;opacity:1;}
+100%{left:140%;opacity:0;}
+}
+
+@keyframes brilloMedallon{
+0%,100%{
+filter:
+drop-shadow(0 0 8px rgba(183,156,255,.15))
+drop-shadow(0 0 20px rgba(183,156,255,.12));
+}
+50%{
+filter:
+drop-shadow(0 0 15px rgba(220,200,255,.35))
+drop-shadow(0 0 35px rgba(220,200,255,.25));
+}
 }
 
 .introduccion{
@@ -111,17 +158,34 @@ text-decoration:none;
 font-size:.8rem;
 }
 
-.destello{
+/* NIEBLA TENEBROSA */
+
+.niebla{
 position:fixed;
-color:#cdb9ea;
-opacity:0;
+border-radius:50%;
 pointer-events:none;
-animation:destello 4s linear forwards;
+z-index:1;
+
+background:radial-gradient(circle,
+rgba(180,120,255,.18) 0%,
+rgba(120,80,180,.08) 45%,
+transparent 75%);
+
+filter:blur(10px);
+animation:flotar linear forwards;
 }
 
-@keyframes destello{
-20%{opacity:.8;}
-100%{opacity:0;transform:scale(1.8);}
+@keyframes flotar{
+0%{
+transform:translateY(30px) scale(.6);
+opacity:0;
+}
+15%{opacity:.45;}
+85%{opacity:.20;}
+100%{
+transform:translateY(-120px) scale(1.5);
+opacity:0;
+}
 }
 </style>
 </head>
@@ -170,15 +234,23 @@ Cuando el medallón se apague, el encantamiento habrá finalizado.
 
 <script>
 setInterval(()=>{
-const d=document.createElement('div');
-d.className='destello';
-d.innerHTML='✦';
-d.style.left=Math.random()*window.innerWidth+'px';
-d.style.top=Math.random()*window.innerHeight+'px';
-d.style.fontSize=(10+Math.random()*20)+'px';
-document.body.appendChild(d);
-setTimeout(()=>d.remove(),4000);
-},1200);
+const n=document.createElement('div');
+n.className='niebla';
+
+const size=20+Math.random()*80;
+
+n.style.width=size+'px';
+n.style.height=size+'px';
+n.style.left=Math.random()*window.innerWidth+'px';
+n.style.top=(window.innerHeight+50)+'px';
+
+const dur=8000+Math.random()*8000;
+n.style.animationDuration=dur+'ms';
+
+document.body.appendChild(n);
+
+setTimeout(()=>n.remove(),dur);
+},700);
 </script>
 
 </body>
