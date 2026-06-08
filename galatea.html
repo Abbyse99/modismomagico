@@ -19,7 +19,9 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(rgba(2
 .humo1{background:rgba(120,70,255,.18);top:-40px;left:-60px;animation:humo1 8s infinite alternate;}
 .humo2{background:rgba(50,0,100,.25);bottom:-60px;right:-60px;animation:humo2 10s infinite alternate;}
 .destelloGrande{position:absolute;color:#d7b8ff;font-size:18px;z-index:6;text-shadow:0 0 15px #b88cff;animation:parpadear 2s infinite;}
-.uno{top:10px;left:-10px;}.dos{top:50%;right:-10px;}.tres{bottom:10px;left:15%;}
+.uno{top:10px;left:-10px;}
+.dos{top:50%;right:-10px;}
+.tres{bottom:10px;left:15%;}
 .nombre{color:#f2edf7;font-size:1.8rem;text-align:center;}
 .titulo{color:#cdb9ea;font-size:1.3rem;margin-bottom:25px;letter-spacing:2px;}
 .campo{width:100%;margin-bottom:20px;}
@@ -37,7 +39,9 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(rgba(2
 </style>
 </head>
 <body>
+
 <div class="libro">
+
 <div class="pagina">
 <div class="retrato">
 <div class="humo humo1"></div>
@@ -59,11 +63,6 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(rgba(2
 </div>
 
 <div class="campo">
-<div class="etiqueta">CLIENTE</div>
-<div class="valor">Galatea de Thalassa</div>
-</div>
-
-<div class="campo">
 <div class="etiqueta">ENCARGO</div>
 <div class="valor">Túnica encantada</div>
 </div>
@@ -75,12 +74,19 @@ body::before{content:"";position:fixed;inset:0;background:radial-gradient(rgba(2
 
 <div class="campo">
 <div class="etiqueta">NOTAS DE DAPHNE</div>
-<div class="notas">✦ Bolsillo personalizado para su tarot<br>✦<br>✦<br>✦</div>
+<div class="notas">
+✦ Bolsillo personalizado para su tarot<br>
+✦ <br>
+✦ <br>
+✦
 </div>
+</div>
+
 </div>
 
 <a href="clientes2.html" class="flecha">❮</a>
 <a href="index.html" class="cerrar">✦ Cerrar grimorio</a>
+
 </div>
 
 <script>
@@ -95,5 +101,6 @@ document.body.appendChild(d);
 setTimeout(()=>d.remove(),4000);
 },1200);
 </script>
+
 </body>
 </html>
