@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>clientes8</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+background:radial-gradient(circle at center,#18121f,#08070b 60%,#000);
+font-family:'Cinzel',serif;
+overflow:hidden;
+}
+.libro{
+width:780px;height:500px;margin:20px auto;
+display:flex;position:relative;
+background:linear-gradient(90deg,#09090b 0%,#050506 47%,#000 50%,#050506 53%,#09090b 100%);
+box-shadow:0 0 80px rgba(90,60,130,.22);
+overflow:hidden;
+}
+.libro:after{
+content:"";
+position:absolute;left:50%;top:0;width:4px;height:100%;
+transform:translateX(-50%);
+background:linear-gradient(to right,transparent,rgba(184,140,255,.25),transparent);
+}
+.pagina{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+.marco{
+width:180px;height:240px;
+border:1px solid rgba(184,140,255,.15);
+box-shadow:0 0 20px rgba(143,105,255,.08);
+}
+.nombre{
+position:absolute;
+bottom:90px;
+color:rgba(242,237,247,.35);
+letter-spacing:3px;
+}
+
+.panel{text-align:center;position:relative;z-index:2}
+.panel h1{
+font-family:'Cormorant Garamond',serif;
+font-size:3.2rem;
+font-weight:600;
+color:#f4eefb;
+}
+.by{
+margin-top:6px;
+letter-spacing:5px;
+color:#ccb8ea;
+font-size:.95rem;
+}
+.frase{
+margin-top:26px;
+font-family:'Cormorant Garamond',serif;
+font-size:1.35rem;
+font-style:italic;
+color:#ddd3ef;
+}
+.linea{
+margin-top:20px;
+color:#bfa2ff;
+letter-spacing:5px;
+}
+
+.runa{
+position:absolute;
+color:#bfa2ff;
+opacity:.55;
+text-shadow:0 0 10px rgba(184,140,255,.6);
+animation:flotar 6s ease-in-out infinite;
+}
+.r1{top:50px;left:60px;font-size:30px}
+.r2{top:90px;left:150px;font-size:18px;animation-delay:1s}
+.r3{top:40px;right:70px;font-size:28px;animation-delay:2s}
+.r4{top:130px;right:130px;font-size:20px;animation-delay:3s}
+.r5{left:35px;top:220px;font-size:34px;animation-delay:4s}
+.r6{right:40px;top:240px;font-size:26px;animation-delay:2.5s}
+.r7{left:90px;bottom:90px;font-size:24px;animation-delay:5s}
+.r8{right:80px;bottom:70px;font-size:30px;animation-delay:1.5s}
+.r9{left:180px;bottom:35px;font-size:18px}
+.r10{right:180px;bottom:30px;font-size:18px;animation-delay:3.5s}
+
+.flecha{
+position:absolute;left:15px;top:50%;
+transform:translateY(-50%);
+font-size:2.5rem;color:#b88cff;text-decoration:none;
+}
+.cerrar{
+position:absolute;left:15px;bottom:15px;
+font-size:.8rem;color:#8f69ff;text-decoration:none;
+}
+.particula{
+position:fixed;
+color:#b88cff;
+opacity:.35;
+pointer-events:none;
+animation:subir linear forwards;
+}
+@keyframes flotar{
+0%,100%{transform:translateY(0) rotate(0deg);opacity:.35}
+50%{transform:translateY(-10px) rotate(8deg);opacity:1}
+}
+@keyframes subir{
+0%{opacity:0;transform:translateY(0) scale(0)}
+20%{opacity:.4}
+100%{opacity:0;transform:translateY(-350px) scale(1.2)}
+}
+</style>
+</head>
+<body>
+<div class="libro">
+<div class="pagina" style="flex-direction:column">
+<div class="marco"></div>
+<div class="nombre">PÁGINA DISPONIBLE</div>
+</div>
+
+<div class="pagina">
+
+<div class="runa r1">ᚠ</div>
+<div class="runa r2">✦</div>
+<div class="runa r3">ᚱ</div>
+<div class="runa r4">☾</div>
+<div class="runa r5">ᛉ</div>
+<div class="runa r6">✧</div>
+<div class="runa r7">ᛗ</div>
+<div class="runa r8">☽</div>
+<div class="runa r9">ᚦ</div>
+<div class="runa r10">ᛒ</div>
+
+<div class="panel">
+<div style="font-size:22px;color:#d8c2ff;text-shadow:0 0 12px #b88cff">✦</div>
+<h1>Nocturna Atelier</h1>
+<div class="by">BY DAPHNE</div>
+<div class="frase">"Toda prenda posee un alma."</div>
+<div class="linea">◈────────◈</div>
+</div>
+
+</div>
+
+<a href="clientes7.html" class="flecha">❮</a>
+<a href="index.html" class="cerrar">✦ Cerrar grimorio</a>
+</div>
+
+<script>
+setInterval(()=>{
+ const p=document.createElement("div");
+ p.className="particula";
+ p.textContent=["✦","☾","☽","✧"][Math.floor(Math.random()*4)];
+ p.style.left=Math.random()*innerWidth+"px";
+ p.style.bottom="-10px";
+ p.style.fontSize=(10+Math.random()*12)+"px";
+ p.style.animationDuration=(8+Math.random()*5)+"s";
+ document.body.appendChild(p);
+ setTimeout(()=>p.remove(),13000);
+},900);
+</script>
+</body>
+</html>
