@@ -162,7 +162,7 @@ font-style:italic;
 
 <div class="descripcion-general">
 Compendio de encantamientos actualmente dominados por Daphne Evans dentro de la disciplina de Modismo Mágico.<br>
-Cada prenda encantada puede incorporar hasta <u>ocho mejoras</u> escogidas libremente de entre las disponibles en este catálogo.
+Cada prenda encantada puede incorporar hasta <u>cinco mejoras</u> escogidas libremente de entre las disponibles en este catálogo.
 </div>
 
 <div class="tarifas-wrap">
@@ -179,27 +179,27 @@ Las prendas encantadas pueden ser robadas siguiendo las reglas del sistema de co
 <div class="cabecera">EFECTO</div>
 <div class="cabecera">DESCRIPCIÓN</div>
 
-<div class="nombre">✦ TEJIDO REFORZADO (GRADO I)</div> 
-<div class="descripcion">Otorga (CO × 2) + NIVEL (Daphne) <u>(75 x 2) + 50</u> de defensa degradable que se restaura al inicio de cada turno propio del portador (redondeado al alza).
+<div class="nombre">✦ TEJIDO REFORZADO (GRADO II)</div> 
+<div class="descripcion">Otorga (CO × 2) + NIVEL (Daphne) <u>(75 x 2) + 70</u> de defensa degradable que se restaura al inicio de cada turno propio del portador (redondeado al alza).
 <div class="aclaracion">El valor de CO empleado será el que posea Daphne Evans al realizar el encantamiento y será confirmado al cliente durante la compra.</div></div>
 
-<div class="nombre">✦ COSTURA ÁGIL (GRADO I)</div>
-<div class="descripcion">Las prendas se ajustan al movimiento del portador. Otorga +2 casillas de movimiento.
+<div class="nombre">✦ COSTURA ÁGIL (GRADO II)</div>
+<div class="descripcion">Las prendas se ajustan al movimiento del portador. Otorga +1 casilla de movimiento y +1 VEL final a su portador.
 <div class="aclaracion">Acumulable con otras prendas equipadas que posean Costura Ágil.</div></div>
 
-<div class="nombre">✦ HUECO OCULTO (GRADO I)</div>
-<div class="descripcion">Añade +2 huecos de equipamiento pequeño a la prenda encantada.
+<div class="nombre">✦ HUECO OCULTO (GRADO II)</div>
+<div class="descripcion">Añade +1 huecos de equipamiento mediano y +1 hueco de equipamiento pequeño a la prenda encantada.
 <div class="aclaracion">Acumulable con otras prendas equipadas que posean Hueco Oculto.</div></div>
 
-<div class="nombre">✦ CAMUFLAJE     (GRADO I)</div>
-<div class="descripcion">Una vez por combate, el portador puede activar *ocultación* sin coste de PA. Se rompe al moverse más de 3 casillas en un turno, al realizar cualquier acción ofensiva o al pasar CO(75)/25 acciones <u>(en este caso, 3 acciones)</u></div>
+<div class="nombre">✦ CAMUFLAJE (GRADO II)</div>
+<div class="descripcion">Dos veces por combate, el portador puede activar *ocultación* sin coste de PA. Se rompe al moverse más de 3 casillas en un turno, al realizar cualquier acción ofensiva o al pasar CO(75)/25 acciones <u>(en este caso, 3 acciones)</u></div>
 
-<div class="nombre">✦ TEJIDO ANTIMAGIA (GRADO I)</div>
+<div class="nombre">✦ TEJIDO ANTIMAGIA (GRADO II)</div>
 <div class="descripcion">Otorga al portador una reducción del 10% al daño de índole mágica recibido tras aplicar defensas.
 <div class="aclaracion">No proporciona protección frente a daños físicos.</div></div>
 
-<div class="nombre">✦ TEJIDO VIL (GRADO I · PERSONALIZADO)</div>
-<div class="descripcion">Cuando el portador utiliza una habilidad ofensiva, puede activar *Tejido Vil* para aumentar el daño final de dicha habilidad en un 10% (x1.10)
+<div class="nombre">✦ TEJIDO VIL (GRADO II · PERSONALIZADO)</div>
+<div class="descripcion">Cuando el portador utiliza una habilidad ofensiva, puede activar *Tejido Vil* para aumentar el daño final de dicha habilidad en un 15% (x1.15). Si la habilidad inflinge daño al objetivo, aplica Inmovilización x1 acción.
 <div class="aclaracion">Debe declararse el uso de Tejido Vil al realizar la habilidad ofensiva. Una vez por combate.</div></div>
 
 <div class="nombre">✦ MÁS MEJORAS PERSONALIZADAS</div>
