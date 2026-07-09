@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galatea de Thalassa</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{margin:0;padding:0;background:radial-gradient(circle at center,#18121f 0%,#08070b 55%,#000 100%);font-family:'Cinzel',serif;overflow-x:hidden;}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(rgba(255,255,255,.02) 1px,transparent 1px);background-size:6px 6px;opacity:.25;pointer-events:none;}
+.libro{width:780px;height:500px;margin:20px auto;display:flex;position:relative;overflow:hidden;background:linear-gradient(90deg,#09090b 0%,#050506 47%,#000 50%,#050506 53%,#09090b 100%);box-shadow:0 0 60px rgba(90,60,130,.18);}
+.libro::after{content:"";position:absolute;left:50%;top:0;width:4px;height:100%;transform:translateX(-50%);background:linear-gradient(to right,transparent,rgba(184,140,255,.25),transparent);}
+.pagina{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:25px;}
+.retrato{width:100%;max-width:320px;height:220px;position:relative;overflow:visible;margin-bottom:20px;animation:respirar 5s ease-in-out infinite;}
+.retrato img{width:100%;height:100%;object-fit:cover;position:relative;z-index:5;border-radius:4px;box-shadow:0 0 30px rgba(160,100,255,.25);transition:1s;}
+.retrato:hover img{transform:scale(1.03);}
+.humo{position:absolute;width:250px;height:250px;border-radius:50%;filter:blur(60px);opacity:.5;z-index:1;}
+.humo1{background:rgba(120,70,255,.18);top:-40px;left:-60px;animation:humo1 8s infinite alternate;}
+.humo2{background:rgba(50,0,100,.25);bottom:-60px;right:-60px;animation:humo2 10s infinite alternate;}
+.destelloGrande{position:absolute;color:#d7b8ff;font-size:18px;z-index:6;text-shadow:0 0 15px #b88cff;animation:parpadear 2s infinite;}
+.uno{top:10px;left:-10px;}.dos{top:50%;right:-10px;}.tres{bottom:10px;left:15%;}
+.nombre{color:#f2edf7;font-size:1.8rem;text-align:center;}
+.titulo{color:#cdb9ea;font-size:1.3rem;margin-bottom:25px;letter-spacing:2px;}
+.campo{width:100%;margin-bottom:20px;}
+.etiqueta{color:#b88cff;font-size:.85rem;letter-spacing:2px;margin-bottom:8px;}
+.valor{color:#f2edf7;font-size:.85rem;padding-bottom:8px;border-bottom:1px solid rgba(184,140,255,.2);}
+.notas{margin-top:10px;color:#f2edf7;line-height:2;font-size:.85rem;}
+.flecha{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#b88cff;text-decoration:none;font-size:2.5rem;}
+.cerrar{position:absolute;bottom:15px;left:15px;color:#8f69ff;text-decoration:none;font-size:.8rem;}
+.destello{position:fixed;color:#cdb9ea;opacity:0;pointer-events:none;animation:destello 4s linear forwards;}
+@keyframes humo1{from{transform:translateX(-20px)}to{transform:translateX(30px) translateY(-20px)}}
+@keyframes humo2{from{transform:translateX(0)}to{transform:translateX(-30px) translateY(20px)}}
+@keyframes respirar{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
+@keyframes parpadear{0%,100%{opacity:.2}50%{opacity:1}}
+@keyframes destello{20%{opacity:.8}100%{opacity:0;transform:scale(1.8)}}
+</style>
+</head>
+<body>
+<div class="libro">
+<div class="pagina">
+<div class="retrato">
+<div class="humo humo1"></div><div class="humo humo2"></div>
+<div class="destelloGrande uno">✦</div><div class="destelloGrande dos">✦</div><div class="destelloGrande tres">✦</div>
+<img src="galatea2.png" alt="Galatea de Thalassa">
+</div>
+<div class="nombre">Galatea de Thalassa</div>
+</div>
+<div class="pagina">
+<div class="titulo">EXPEDIENTE</div>
+<div class="campo"><div class="etiqueta">CASA DE HOGWARTS</div><div class="valor">Hufflepuff</div></div>
+<div class="campo"><div class="etiqueta">ENCARGO</div><div class="valor">Pendiente de registrar</div></div>
+<div class="campo"><div class="etiqueta">FECHA DE ENTREGA</div><div class="valor">--.--.----</div></div>
+<div class="campo">
+<div class="etiqueta">NOTAS DE DAPHNE</div>
+<div class="notas">✦<br>✦<br>✦<br>✦</div>
+</div>
+</div>
+<a href="clientes5.html" class="flecha">❮</a>
+<a href="index.html" class="cerrar">✦ Cerrar grimorio</a>
+</div>
+<script>
+setInterval(()=>{
+const d=document.createElement('div');
+d.className='destello';
+d.innerHTML='✦';
+d.style.left=Math.random()*window.innerWidth+'px';
+d.style.top=Math.random()*window.innerHeight+'px';
+d.style.fontSize=(10+Math.random()*20)+'px';
+document.body.appendChild(d);
+setTimeout(()=>d.remove(),4000);
+},1200);
+</script>
+</body>
+</html>
