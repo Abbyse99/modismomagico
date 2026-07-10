@@ -12,7 +12,6 @@ body{background:radial-gradient(circle at center,#18121f,#08070b 60%,#000);font-
 .libro:after{content:"";position:absolute;left:50%;top:0;width:4px;height:100%;transform:translateX(-50%);background:linear-gradient(to right,transparent,rgba(184,140,255,.25),transparent);}
 .pagina{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;padding:20px}
 
-/* IZQUIERDA */
 .foto{width:180px;height:240px;overflow:hidden;position:relative;margin-bottom:20px;transition:.4s;box-shadow:0 0 20px rgba(143,105,255,.15)}
 .foto:before{content:"";position:absolute;width:280px;height:280px;background:radial-gradient(rgba(184,140,255,.08),transparent 70%);left:50%;top:50%;transform:translate(-50%,-50%);z-index:-1;animation:halo 6s ease-in-out infinite}
 .foto:hover{transform:translateY(-4px);box-shadow:0 0 20px rgba(143,105,255,.35)}
@@ -24,23 +23,191 @@ body{background:radial-gradient(circle at center,#18121f,#08070b 60%,#000);font-
 .boton:hover{background:rgba(143,105,255,.12);border-color:rgba(143,105,255,.7);transform:translateY(-2px)}
 .boton:hover:before{left:120%}
 
-/* DERECHA */
 .aura{position:absolute;width:320px;height:320px;border-radius:50%;left:50%;top:43%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(155,110,255,.18),transparent 70%);animation:pulse 6s ease-in-out infinite}
-.sello{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%) rotate(45deg);width:150px;height:150px;border:1px solid rgba(190,160,255,.25);box-shadow:0 0 30px rgba(160,120,255,.15)}
-.sello:before,.sello:after{content:"";position:absolute;inset:12px;border:1px solid rgba(190,160,255,.15)}
-.logo{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);font-size:48px;color:#d8c2ff;text-shadow:0 0 20px rgba(184,140,255,.5)}
-.titulo{position:absolute;top:58%;width:100%;font-size:2.1rem;color:#f4eefb}
-.sub{position:absolute;top:67%;width:100%;letter-spacing:6px;color:#b88cff;font-size:.8rem}
-.linea{position:absolute;top:74%;left:50%;transform:translateX(-50%);width:170px;height:1px;background:linear-gradient(90deg,transparent,#b88cff,transparent)}
-.frase{position:absolute;bottom:55px;width:80%;left:10%;font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-style:italic;color:#ddd3ef}
+
+/* Nuevo sello */
+.sigilo{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);width:170px;height:170px}
+.sigilo .anillo,.sigilo .anillo2{position:absolute;border-radius:50%;border:1px solid rgba(190,160,255,.28);inset:0}
+.sigilo .anillo2{inset:18px;border-color:rgba(190,160,255,.18)}
+.sigilo .cruz:before,.sigilo .cruz:after{
+content:"";position:absolute;left:50%;top:50%;width:1px;height:180px;
+background:linear-gradient(transparent,#b88cff,transparent);
+transform:translate(-50%,-50%);
+}
+.sigilo .cruz:after{transform:translate(-50%,-50%) rotate(90deg);}
+.sigilo .diag:before,.sigilo .diag:after{
+content:"";position:absolute;left:50%;top:50%;width:1px;height:160px;
+background:linear-gradient(transparent,rgba(184,140,255,.6),transparent);
+}
+.sigilo .diag:before{transform:translate(-50%,-50%) rotate(45deg);}
+.sigilo .diag:after{transform:translate(-50%,-50%) rotate(-45deg);}
+.logo{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);font-size:44px;color:#d8c2ff;text-shadow:0 0 20px rgba(184,140,255,.5)}
+.titulo{position:absolute;top:64%;width:100%;font-size:2.1rem;color:#f4eefb}
+.sub{position:absolute;top:74%;width:100%;letter-spacing:6px;color:#b88cff;font-size:.8rem}
+.linea{position:absolute;top:81%;left:50%;transform:translateX(-50%);width:170px;height:1px;background:linear-gradient(90deg,transparent,#b88cff,transparent)}
+.frase{position:absolute;bottom:20px;width:80%;left:10%;font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-style:italic;color:#ddd3ef}
 .runa{position:absolute;color:#9f79ff66;font-size:22px;animation:float 7s ease-in-out infinite}
 .r1{left:35px;top:40px}.r2{right:40px;top:70px;animation-delay:1s}.r3{left:55px;bottom:110px;animation-delay:2s}.r4{right:55px;bottom:80px;animation-delay:3s}
-
 .flecha{position:absolute;left:15px;top:50%;transform:translateY(-50%);font-size:2.5rem;color:#b88cff;text-decoration:none}
 .cerrar{position:absolute;left:15px;bottom:15px;color:#8f69ff;text-decoration:none;font-size:.8rem}
 .particula{position:fixed;color:#b88cff;opacity:.35;pointer-events:none;animation:subir linear forwards}
 .transicion{position:fixed;inset:0;background:radial-gradient(circle,rgba(120,90,170,.5),rgba(15,10,20,.95)45%,#000);opacity:0;pointer-events:none}
 .transicion.activa{animation:abrir .8s forwards}
+
+/* Efectos oscuros */
+.pagina:nth-child(2)::before{
+content:"";
+position:absolute;
+inset:-20%;
+background:
+radial-gradient(circle at 50% 40%, rgba(120,60,180,.18), transparent 30%),
+radial-gradient(circle at 55% 42%, rgba(30,0,50,.55), transparent 60%);
+filter:blur(18px);
+animation:sombra 10s ease-in-out infinite;
+pointer-events:none;
+}
+
+.aura2,.aura3{
+position:absolute;
+left:50%;top:38%;
+border-radius:50%;
+transform:translate(-50%,-50%);
+pointer-events:none;
+}
+
+.aura2{
+width:300px;height:300px;
+border:1px solid rgba(170,120,255,.18);
+box-shadow:
+0 0 30px rgba(120,70,200,.25),
+inset 0 0 30px rgba(140,90,220,.18);
+animation:girar 18s linear infinite;
+}
+
+.aura3{
+width:290px;height:290px;
+background:radial-gradient(circle,
+rgba(80,0,120,.18),
+rgba(20,0,40,.08) 45%,
+transparent 72%);
+filter:blur(12px);
+animation:respirar 8s ease-in-out infinite;
+}
+
+.chispa{
+position:absolute;
+left:50%;
+top:50%;
+color:rgba(214,188,255,.45);
+font-family:'Cinzel',serif;
+font-size:14px;
+text-shadow:0 0 10px rgba(184,140,255,.6);
+animation:orbitar linear infinite;
+opacity:.8;
+}
+
+@keyframes sombra{
+50%{transform:scale(1.08) rotate(4deg);filter:blur(26px);}
+}
+@keyframes girar{
+to{transform:translate(-50%,-50%) rotate(360deg);}
+}
+@keyframes respirar{
+50%{transform:translate(-50%,-50%) scale(1.12);}
+}
+@keyframes orbitar{
+0%{transform:rotate(0deg) translateX(95px) rotate(0deg);}
+100%{transform:rotate(360deg) translateX(95px) rotate(-360deg);}
+}
+
+
+/* ===== MAGIA AVANZADA ===== */
+.portal{
+position:absolute;
+left:50%;top:38%;
+width:340px;height:340px;
+transform:translate(-50%,-50%);
+border-radius:50%;
+pointer-events:none;
+background:
+conic-gradient(from 0deg,
+transparent 0 8%,
+rgba(175,120,255,.08) 10%,
+transparent 14%,
+rgba(120,70,220,.08) 26%,
+transparent 30%,
+rgba(190,150,255,.08) 42%,
+transparent 46%,
+rgba(120,70,220,.08) 60%,
+transparent 64%,
+rgba(175,120,255,.08) 76%,
+transparent 80%);
+filter:blur(1px);
+animation:portalspin 40s linear infinite;
+}
+
+.ondas{
+position:absolute;
+left:50%;top:38%;
+transform:translate(-50%,-50%);
+width:120px;height:120px;
+border-radius:50%;
+border:1px solid rgba(184,140,255,.25);
+animation:ripple 5s infinite;
+pointer-events:none;
+}
+
+.ondas::before,.ondas::after{
+content:"";
+position:absolute;
+inset:0;
+border-radius:50%;
+border:inherit;
+animation:inherit;
+animation-delay:1.6s;
+}
+.ondas::after{animation-delay:3.2s;}
+
+.rayo{
+position:absolute;
+left:50%;top:38%;
+width:2px;height:2px;
+background:#e8d7ff;
+border-radius:50%;
+box-shadow:0 0 18px #b88cff;
+pointer-events:none;
+animation:flare 4.5s infinite;
+}
+
+.neblina{
+position:absolute;
+bottom:25px;
+left:-15%;
+width:130%;
+height:120px;
+background:radial-gradient(ellipse at center,
+rgba(80,30,130,.16),
+transparent 70%);
+filter:blur(22px);
+animation:fog 11s ease-in-out infinite alternate;
+pointer-events:none;
+}
+
+@keyframes portalspin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes ripple{
+0%{transform:translate(-50%,-50%) scale(.5);opacity:0}
+30%{opacity:.45}
+100%{transform:translate(-50%,-50%) scale(2.7);opacity:0}
+}
+@keyframes flare{
+0%,82%,100%{opacity:0;transform:translate(-50%,-50%) scale(.4)}
+84%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+86%{opacity:.2;transform:translate(-50%,-50%) scale(4)}
+}
+@keyframes fog{
+from{transform:translateX(-20px)}
+to{transform:translateX(25px)}
+}
 
 @keyframes halo{50%{transform:translate(-50%,-50%) scale(1.1)}}
 @keyframes pulse{50%{transform:translate(-50%,-50%) scale(1.08)}}
@@ -51,35 +218,36 @@ body{background:radial-gradient(circle at center,#18121f,#08070b 60%,#000);font-
 </head>
 <body>
 <div class="libro">
-
 <div class="pagina">
 <div class="foto"><img src="daphne.png" alt="Daphne Rosier"></div>
 <div class="nombre">Daphne Rosier</div>
 <div class="casa">SLYTHERIN</div>
 <a class="boton" href="daphne.html">VER EXPEDIENTE</a>
 </div>
-
 <div class="pagina">
 <div class="aura"></div>
-<div class="sello"></div>
+<div class="portal"></div>
+<div class="ondas"></div>
+<div class="rayo"></div>
+<div class="neblina"></div>
+<div class="aura3"></div><div class="aura2" id="anillo"></div>
+<div class="sigilo">
+<div class="anillo"></div>
+<div class="anillo2"></div>
+<div class="cruz"></div>
+<div class="diag"></div>
+</div>
 <div class="logo">✦</div>
-
-<div class="runa r1">ᚠ</div>
-<div class="runa r2">☾</div>
-<div class="runa r3">ᛉ</div>
-<div class="runa r4">ᚱ</div>
-
+<div class="runa r1">ᚠ</div><div class="runa r2">☾</div><div class="runa r3">ᛉ</div><div class="runa r4">ᚱ</div>
 <div class="titulo">Nocturna Atelier</div>
 <div class="sub">BY DAPHNE</div>
 <div class="linea"></div>
 <div class="frase">«Cada puntada ata un destino»</div>
 </div>
-
 <a href="clientes7.html" class="flecha">❮</a>
 <a href="index.html" class="cerrar">✦ Cerrar grimorio</a>
 </div>
 <div class="transicion" id="transicion"></div>
-
 <script>
 setInterval(()=>{
 const p=document.createElement("div");
@@ -92,12 +260,48 @@ p.style.animationDuration=(8+Math.random()*5)+"s";
 document.body.appendChild(p);
 setTimeout(()=>p.remove(),13000);
 },900);
-
 document.querySelectorAll("a").forEach(a=>a.addEventListener("click",e=>{
 e.preventDefault();
 document.getElementById("transicion").classList.add("activa");
 setTimeout(()=>location.href=a.href,700);
 }));
+
+
+const anillo=document.getElementById("anillo");
+const runas=["ᚠ","ᚢ","ᚦ","ᚨ","ᚱ","ᚲ","ᚷ","ᚹ","ᚺ","ᚾ","ᛁ","ᛃ","ᛇ","ᛈ","ᛉ","ᛋ","ᛏ","☽","☾","✦"];
+for(let i=0;i<24;i++){
+ const c=document.createElement("div");
+ c.className="chispa";
+ c.textContent=runas[i%runas.length];
+ c.style.animationDuration=(18+Math.random()*10)+"s";
+ c.style.animationDelay=(-Math.random()*10)+"s";
+ c.style.transform=`rotate(${i*15}deg) translateX(145px)`;
+ anillo.appendChild(c);
+}
+
+
+// Runas flotantes alrededor del sigilo
+const pagina=document.querySelectorAll('.pagina')[1];
+const simbolos=['ᚠ','ᛉ','✦','☾','✧','ᚱ','ᛟ','✶'];
+for(let i=0;i<14;i++){
+ const r=document.createElement('div');
+ r.textContent=simbolos[Math.floor(Math.random()*simbolos.length)];
+ r.style.position='absolute';
+ r.style.left='50%';
+ r.style.top='38%';
+ r.style.color='rgba(190,150,255,.18)';
+ r.style.fontSize=(10+Math.random()*12)+'px';
+ r.style.pointerEvents='none';
+ const ang=Math.random()*Math.PI*2;
+ const dist=95+Math.random()*70;
+ r.animate([
+ {transform:`translate(${Math.cos(ang)*dist}px,${Math.sin(ang)*dist}px) rotate(0deg)`,opacity:.05},
+ {transform:`translate(${Math.cos(ang)*(dist+12)}px,${Math.sin(ang)*(dist+12)}px) rotate(180deg)`,opacity:.45},
+ {transform:`translate(${Math.cos(ang)*dist}px,${Math.sin(ang)*dist}px) rotate(360deg)`,opacity:.05}
+ ],{duration:5000+Math.random()*5000,iterations:Infinity});
+ pagina.appendChild(r);
+}
+
 </script>
 </body>
 </html>
