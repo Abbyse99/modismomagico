@@ -7,55 +7,31 @@
 <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-background:radial-gradient(circle,#241433,#120b1b 70%,#050409);
-font-family:"Cormorant Garamond",serif;
-color:#f1ebff;
-display:flex;justify-content:center;padding:30px;overflow:hidden}
-#particles{position:fixed;inset:0;pointer-events:none}
-.p{position:absolute;width:3px;height:3px;border-radius:50%;background:#dcbcff;box-shadow:0 0 10px #b57aff;animation:rise linear infinite}
-@keyframes rise{from{transform:translateY(110vh);opacity:0}10%{opacity:0}30%{opacity:1}to{transform:translateY(-20vh);opacity:0}}
-.frame{width:1080px;height:820px;display:grid;grid-template-columns:38% 62%;background:linear-gradient(#261537,#160d22);border:2px solid #342049;box-shadow:0 0 18px rgba(70,40,110,.45);position:relative;overflow:hidden}
-.frame:before{content:"✶ ☾ ✦ ☽ ✶";position:absolute;top:10px;left:50%;transform:translateX(-50%);letter-spacing:22px;color:rgba(222,190,255,.18);animation:pulse 10s infinite}
-@keyframes pulse{50%{text-shadow:0 0 15px #bb8cff}}
-.left{position:relative}
-.left img{width:100%;height:100%;object-fit:cover;filter:brightness(.7)}
-.left:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,#12071d,transparent 55%)}
+body{background:radial-gradient(circle at center,#17101f 0%,#0d0913 55%,#050408 100%);font-family:"Cormorant Garamond",serif;color:#f1ebff;display:flex;justify-content:center;padding:30px;overflow:hidden}
+.frame{width:1080px;height:820px;display:grid;grid-template-columns:38% 62%;background:linear-gradient(#1a1323,#0f0b16);border:2px solid #2b2038;box-shadow:0 0 18px rgba(0,0,0,.45);position:relative;overflow:hidden}
+.left{position:relative}.left img{width:100%;height:100%;object-fit:cover;filter:brightness(.7)}.left:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,#12071d,transparent 55%)}
 .info{position:absolute;bottom:20px;left:18px;right:18px;text-align:center;z-index:2}
-.info h2{font-family:"UnifrakturMaguntia";font-size:58px;font-weight:400;color:#fff;text-shadow:0 0 18px #b97bff}
+.info h2{font-family:"UnifrakturMaguntia";font-size:58px;font-weight:400;color:#fff;text-shadow:0 0 12px #7b5ba8}
 .info p{font-family:Cinzel;letter-spacing:4px;color:#d8bfff;margin:10px 0 18px}
-.menu button{display:block;width:100%;padding:12px;margin:8px 0;background:rgba(140,90,220,.08);border:1px solid rgba(210,180,255,.22);color:#f4efff;font-family:Cinzel,serif;font-size:18px;font-weight:600;letter-spacing:1.5px;cursor:pointer;transition:.3s}
-.menu button.active,.menu button:hover{background:rgba(140,90,220,.22);box-shadow:0 0 18px #af7dff}
-.right{padding:28px;background:linear-gradient(#21142f,#181022);overflow:auto}
-.right::-webkit-scrollbar{width:8px}.right::-webkit-scrollbar-thumb{background:#8f63df;border-radius:8px}
+.menu button{display:block;width:100%;padding:12px;margin:8px 0;background:rgba(80,55,120,.08);border:1px solid rgba(130,100,180,.22);color:#f4efff;font-family:Cinzel;font-size:18px;font-weight:600;cursor:pointer;transition:.3s}
+.menu button.active,.menu button:hover{background:rgba(90,60,140,.22);box-shadow:0 0 12px #5f4696}
+.right{padding:28px;background:linear-gradient(#18111f,#0f0b16);overflow:auto}
+.right::-webkit-scrollbar{width:8px}.right::-webkit-scrollbar-track{background:#0b0910}.right::-webkit-scrollbar-thumb{background:#3b2957;border-radius:8px;border:1px solid #554073}.right::-webkit-scrollbar-thumb:hover{background:#4c3672}
 .panel{display:none}.panel.active{display:block}
-h3{font-family:"UnifrakturMaguntia";font-size:40px;font-weight:400;color:#f4edff;margin-bottom:16px;border-bottom:1px solid rgba(183,156,255,.25);padding-bottom:8px;text-shadow:0 0 12px #a96eff}
+h3{font-family:"UnifrakturMaguntia";font-size:40px;font-weight:400;color:#f4edff;margin-bottom:16px;border-bottom:1px solid rgba(183,156,255,.15);padding-bottom:8px}
 h4{font-family:Cinzel;color:#d4bbff;margin:20px 0 8px}
 .meta{color:#d7caf3;line-height:1.8;margin-bottom:10px}
-ul{list-style:none}
-li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:18px;transition:.25s}
-li:hover{padding-left:8px;text-shadow:0 0 8px #bf8fff}
-.progress{margin:14px 0 24px}
-.bar{height:12px;background:#2d2441;border-radius:20px;overflow:hidden;margin-top:8px}
-.fill{height:100%;background:linear-gradient(90deg,#6c39dc,#d1b4ff,#6c39dc);background-size:200%;animation:flow 3s linear infinite;box-shadow:0 0 12px #bb8cff}
+ul{list-style:none}li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:18px;transition:.25s}
+li:hover{padding-left:8px;text-shadow:0 0 5px #7753b8}
+.progress{margin:14px 0 24px}.bar{height:12px;background:#15111d;border:1px solid #302445;border-radius:20px;overflow:hidden;margin-top:8px}
+.fill{height:100%;background:linear-gradient(90deg,#3d226d,#5b3f94,#3d226d);background-size:200%;animation:flow 5s linear infinite;box-shadow:0 0 8px rgba(95,70,150,.45)}
 @keyframes flow{to{background-position:200%}}
-</style>
-</head>
-<body>
-<div id="particles"></div>
-<div class="frame">
-<div class="left">
-<img src="daphne.png" alt="Daphne">
-<div class="info">
-<h2>Daphne Rosier</h2>
-<p>REQUISITOS</p>
-<div class="menu">
+</style></head><body>
+<div class="frame"><div class="left"><img src="daphne.png"><div class="info"><h2>Daphne Rosier</h2><p>REQUISITOS</p><div class="menu">
 <button class="active" onclick="showPanel('ao',this)">✦ ARTES OSCURAS</button>
 <button onclick="showPanel('ko',this)">✦ KOLDOVSTORETZ</button>
 <button onclick="showPanel('mm',this)">✦ MODISMO MÁGICO</button>
-</div>
-</div>
-</div>
+</div></div></div>
 <div class="right">
 
 <div class="panel active" id="ao">
@@ -114,8 +90,5 @@ li:hover{padding-left:8px;text-shadow:0 0 8px #bf8fff}
 </div></div>
 <script>
 function showPanel(id,b){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.menu button').forEach(x=>x.classList.remove('active'));b.classList.add('active');}
-const c=document.getElementById('particles');
-for(let i=0;i<25;i++){let d=document.createElement('div');d.className='p';d.style.left=Math.random()*100+'%';d.style.top='110vh';d.style.animationDuration=(8+Math.random()*8)+'s';d.style.animationDelay=(Math.random()*8)+'s';c.appendChild(d);}
 </script>
-</body>
-</html>
+</body></html>
