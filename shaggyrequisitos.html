@@ -1,60 +1,48 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shaggy Rogers - Grimorio de Requisitos</title>
+<html lang="es"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shaggy Rogers - Requisitos</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Spectral:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:radial-gradient(circle,#132015,#070a08 70%,#000);font-family:Spectral,serif;color:#eef6ef;display:flex;justify-content:center;padding:35px}
 .frame{width:1080px;height:820px;display:grid;grid-template-columns:38% 62%;background:#101710;border:8px solid #2c5b39;overflow:hidden;box-shadow:0 0 40px rgba(0,0,0,.8),0 0 30px rgba(95,190,120,.25)}
-.left{position:relative;background:#182218}
-.left img{width:100%;height:100%;object-fit:cover}
-.left:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,12,8,.95),rgba(8,12,8,.12))}
+.left{position:relative;background:#182218}.left img{width:100%;height:100%;object-fit:cover}
+.left:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,12,8,.95),rgba(8,12,8,.1))}
 .info{position:absolute;bottom:20px;width:100%;padding:24px;text-align:center;z-index:2}
-.info h2{font-family:Cinzel,serif;letter-spacing:4px}
-.info p{color:#9fe0a6;margin:8px 0 20px}
+.info h2{font-family:Cinzel;letter-spacing:4px}.info p{color:#9fe0a6;margin:8px 0 20px}
 .menu button{display:block;width:100%;padding:12px;background:none;border:none;color:#eef6ef;font-family:Cinzel;text-align:left;cursor:pointer}
 .menu button.active,.menu button:hover{background:rgba(130,220,150,.08);border-left:3px solid #78d18d}
 .right{background:#182119;padding:28px;overflow:auto}
 .panel{display:none}.panel.active{display:block}
 h3{font-family:Cinzel;color:#c9efc8;border-bottom:1px solid rgba(120,209,141,.25);padding-bottom:8px;margin-bottom:15px}
 h4{font-family:Cinzel;color:#b8e7b8;margin:18px 0 8px}
-.meta{color:#d5ead5;line-height:1.8;margin-bottom:10px}
-ul{list-style:none}
-li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
-</style>
-</head>
-<body>
-<div class="frame">
-<div class="left">
-<img src="shaggy.png" alt="Shaggy Rogers">
-<div class="info">
-<h2>SHAGGY ROGERS</h2>
-<p>Requisitos</p>
+.meta{color:#d5ead5;line-height:1.7;margin-bottom:10px}
+ul{list-style:none}li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.progress{margin:12px 0 22px}.bar{height:12px;background:#2d3d30;border-radius:20px;overflow:hidden;margin-top:8px}
+.fill{height:100%;background:linear-gradient(90deg,#3d8b4b,#67c977,#a8efb0);box-shadow:0 0 10px #78d18d}
+</style></head><body>
+<div class="frame"><div class="left">
+<img src="shaggy.png">
+<div class="info"><h2>SHAGGY ROGERS</h2><p>Requisitos</p>
 <div class="menu">
-<button class="active" onclick="showPanel('g',this)">✦ GASTRONOMAGIA</button>
-<button onclick="showPanel('m',this)">✦ MERGE</button>
-</div>
-</div>
-</div>
-
+<button class="active" onclick="sw('g',this)">✦ GASTRONOMAGIA</button>
+<button onclick="sw('m',this)">✦ MERGE</button>
+</div></div></div>
 <div class="right">
 
-<div class="panel active" id="g">
+<div id="g" class="panel active">
 <h3>Gastronomagia</h3>
-
 <h4>GRADO I</h4>
 <div class="meta"><b>Inicio:</b> 06.06.2026</div>
 <ul>
-<li>• Requiere 20 días en el grado 0.</li>
-<li>• Requiere 3 puntos de requisitos.</li>
-<li>• Consumir una receta elaborada por el propio usuario durante un combate.</li>
-<li>• Compartir una preparación gastronómica con otro jugador.</li>
-<li>• Elaborar diez recetas de Gastronomagia.</li>
-<li>• Requiere 25 CO en Gastronomagia.</li>
+<li>✓ Requiere 20 días en el grado 0.</li>
+<li>✓ Consumir una receta elaborada por el propio usuario durante un combate.</li>
+<li>✓ Compartir una preparación gastronómica con otro jugador.</li>
+<li>✓ Elaborar diez recetas de Gastronomagia.</li>
+<li>✓ Requiere 25 CO en Gastronomagia.</li>
 </ul>
+<div class="progress"><b>Progreso: 5 / 5 requisitos</b><div class="bar"><div class="fill" style="width:100%"></div></div></div>
 
 <h4>GRADO II</h4>
 <div class="meta"><b>Ascenso:</b> 01.07.2026</div>
@@ -67,6 +55,7 @@ li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
 <li>• Crear una receta personalizada mediante <i>Creación Culinaria</i>.</li>
 <li>• Requiere 50 CO en Gastronomagia.</li>
 </ul>
+<div class="progress"><b>Progreso: 0 / 7 requisitos</b><div class="bar"><div class="fill" style="width:0%"></div></div></div>
 
 <h4>GRADO III</h4>
 <ul>
@@ -74,41 +63,36 @@ li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
 <li>• Requiere 6 puntos de requisitos.</li>
 <li>• Requiere 75 CO en Gastronomagia.</li>
 </ul>
+<div class="progress"><b>Progreso: 0 / 3 requisitos</b><div class="bar"><div class="fill" style="width:0%"></div></div></div>
 </div>
 
-<div class="panel" id="m">
+<div id="m" class="panel">
 <h3>Merge</h3>
-
 <h4>GRADO I</h4>
 <div class="meta"><b>Inicio:</b> 28.06.2026</div>
 <ul>
-<li>• El jugador no obtiene beneficios.</li>
+<li>✓ Activar <i>Escafandra Arcana</i> y acumular al menos 4 Cargas de Presión en un mismo combate.</li>
+<li>✓ Utilizar <i>Scuba</i> en casillas de agua profunda y ejecutar una habilidad ofensiva en el mismo turno.</li>
 <li>• Requiere 30 días en el grado 0.</li>
-<li>• Requiere 3 puntos de requisitos.</li>
-<li>• Activar <i>Escafandra Arcana</i> y acumular al menos 4 Cargas de Presión en un mismo combate.</li>
-<li>• Utilizar <i>Scuba</i> en casillas de agua profunda y ejecutar una habilidad ofensiva en el mismo turno.</li>
 <li>• Requiere 75 CO en Encantamientos o CCM.</li>
 </ul>
+<div class="progress"><b>Progreso: 2 / 4 requisitos</b><div class="bar"><div class="fill" style="width:50%"></div></div></div>
 
 <h4>GRADO II</h4>
 <ul>
-<li>• El jugador no obtiene beneficios.</li>
 <li>• Requiere 30 días en el grado I.</li>
 <li>• Requiere 6 puntos de requisitos.</li>
 <li>• Requiere 100 CO en Encantamientos o CCM.</li>
 </ul>
+<div class="progress"><b>Progreso: 0 / 3 requisitos</b><div class="bar"><div class="fill" style="width:0%"></div></div></div>
+
+<h4>GRADO III</h4>
+<p>Requisitos pendientes de añadir.</p>
+<div class="progress"><b>Progreso: 0 / 0 requisitos</b><div class="bar"><div class="fill" style="width:0%"></div></div></div>
 </div>
 
-</div>
-</div>
-
+</div></div>
 <script>
-function showPanel(id,b){
-document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-document.querySelectorAll('.menu button').forEach(x=>x.classList.remove('active'));
-b.classList.add('active');
-}
+function sw(id,b){document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.menu button').forEach(x=>x.classList.remove('active'));b.classList.add('active');}
 </script>
-</body>
-</html>
+</body></html>
