@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grimorio de Progresión</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Spectral:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:radial-gradient(circle,#181221,#08070c 65%,#000);font-family:Spectral,serif;display:flex;justify-content:center;padding:35px;color:#eee}
+.frame{width:1080px;height:820px;display:grid;grid-template-columns:38% 62%;border:8px solid #38264b;background:#130f1b;box-shadow:0 0 40px rgba(0,0,0,.8),0 0 25px rgba(183,156,255,.2);overflow:hidden}
+.left{position:relative;background:#1a1523}
+.left img{width:100%;height:100%;object-fit:cover}
+.left:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,6,12,.96),rgba(8,6,12,.15))}
+.info{position:absolute;bottom:20px;width:100%;padding:24px;text-align:center;z-index:2}
+.info h2{font-family:Cinzel;color:#fff;letter-spacing:4px}
+.info p{color:#c5b1ff;margin:8px 0 20px}
+.menu button{display:block;width:100%;padding:13px;background:none;border:none;color:#ddd;font-family:Cinzel;text-align:left;cursor:pointer;transition:.25s}
+.menu button.active,.menu button:hover{background:rgba(183,156,255,.08);border-left:3px solid #b79cff;color:#fff}
+.right{padding:28px;background:linear-gradient(#1b1625,#15111d);overflow:auto}
+.panel{display:none}.panel.active{display:block}
+h3{font-family:Cinzel;color:#d8c7ff;font-size:30px;margin-bottom:16px;border-bottom:1px solid rgba(183,156,255,.25);padding-bottom:8px}
+h4{font-family:Cinzel;color:#cbb5ff;margin:20px 0 8px}
+.meta{color:#cdbfe8;line-height:1.8;margin-bottom:10px}
+ul{list-style:none}
+li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.progress{margin:14px 0 24px}
+.bar{height:12px;background:#2d2441;border-radius:20px;overflow:hidden;margin-top:8px}
+.fill{height:100%;background:linear-gradient(90deg,#5c3c88,#8b69d7,#c4b0ff);box-shadow:0 0 10px #b79cff}
+</style>
+</head>
+<body>
+<div class="frame">
+<div class="left">
+<img src="daphne.png" alt="Daphne">
+<div class="info">
+<h2>DAPHNE ROSIER</h2>
+<p>Requisitos</p>
+<div class="menu">
+<button class="active" onclick="showPanel('ao',this)">✦ ARTES OSCURAS</button>
+<button onclick="showPanel('ko',this)">✦ KOLDOVSTORETZ</button>
+<button onclick="showPanel('mm',this)">✦ MODISMO MÁGICO</button>
+</div>
+</div>
+</div>
+
+<div class="right">
+
+<div class="panel active" id="ao">
+<h3>Artes Oscuras</h3>
+
+<h4>GRADO I</h4>
+<div class="meta"><b>Inicio:</b> 08.06.2026<br><b>Camino:</b> Corrupción</div>
+<ul>
+<li>✓ Permanecer 20 días en el grado.</li>
+<li>✓ Utilizar 3 habilidades distintas de Artes Oscuras durante un mismo combate (5/5).</li>
+<li>✓ Completar una historia referente al desarrollo personal del personaje como usuario de Artes Oscuras.</li>
+<li>✓ Ganar un combate en situación de desventaja numérica (1 vs 2 o más) usando habilidades de Artes Oscuras.</li>
+</ul>
+<div class="progress"><b>Progreso: 4 / 4 requisitos</b><div class="bar"><div class="fill" style="width:100%"></div></div></div>
+
+<h4>GRADO II</h4>
+<div class="meta"><b>Mejora elegida:</b> Muro Vengativo</div>
+<ul>
+<li>✓ Completar una historia referente al desarrollo personal del personaje como usuario de Artes Oscuras.</li>
+<li>✓ Utilizar 3 habilidades distintas de Artes Oscuras durante un mismo combate (4/5).</li>
+<li>• Ganar un combate en situación de desventaja numérica (1 vs 2 o más) usando habilidades de Artes Oscuras.</li>
+<li>• Cuarto requisito pendiente.</li>
+</ul>
+<div class="progress"><b>Progreso: 2 / 4 requisitos</b><div class="bar"><div class="fill" style="width:50%"></div></div></div>
+
+<h4>GRADO III</h4>
+<p>Requisitos pendientes de añadir.</p>
+</div>
+
+<div class="panel" id="ko">
+<h3>Koldovstoretz</h3>
+<h4>GRADO I</h4>
+<div class="meta"><b>Inicio:</b> 28.06.2026</div>
+<ul>
+<li>✓ Realizar una historia relacionada con la experiencia del personaje en Koldovstoretz.</li>
+<li>✓ Atrapar a un oponente con <i>Raíces de Hielo</i> y salir victorioso del combate.</li>
+<li>✓ Derrotar a un oponente utilizando <i>Confringo Boreal</i> como golpe final.</li>
+<li>• Permanecer 30 días en el grado.</li>
+</ul>
+<div class="progress"><b>Progreso: 3 / 4 requisitos</b><div class="bar"><div class="fill" style="width:75%"></div></div></div>
+
+<h4>GRADO II</h4>
+<p>Requisitos pendientes de añadir.</p>
+</div>
+
+<div class="panel" id="mm">
+<h3>Modismo Mágico</h3>
+
+<h4>GRADO I</h4>
+<div class="meta"><b>Inicio:</b> 01.06.2026</div>
+<ul>
+<li>✓ Realizar una aventura referente al desarrollo del Modismo Mágico.</li>
+<li>✓ Encantar tu primera prenda.</li>
+<li>✓ Encantar un total de tres prendas.</li>
+</ul>
+<div class="progress"><b>Progreso: 3 / 3 requisitos</b><div class="bar"><div class="fill" style="width:100%"></div></div></div>
+
+<h4>GRADO II</h4>
+<div class="meta"><b>Inicio:</b> 15.06.2026<br><b>Ascenso:</b> 05.07.2026</div>
+<ul>
+<li>✓ Realizar una aventura referente al desarrollo del Modismo Mágico.</li>
+<li>✓ Encantar tu primera prenda.</li>
+<li>✓ Escribir una historia referente al desarrollo del Modismo Mágico.</li>
+<li>✓ Encantar un total de tres prendas.</li>
+</ul>
+<div class="progress"><b>Progreso: 4 / 4 requisitos</b><div class="bar"><div class="fill" style="width:100%"></div></div></div>
+
+<h4>GRADO III</h4>
+<div class="meta"><b>Requiere:</b> 20 días en el grado</div>
+<ul>
+<li>✓ Escribir una historia referente al desarrollo del Modismo Mágico.</li>
+<li>✓ Encantar tu primera prenda.</li>
+<li>✓ Encantar un total de tres prendas.</li>
+<li>✓ Crear tu primera mejora de prenda (<i>Demora de Átropos</i>).</li>
+<li>• Participar en 5 combates portando una prenda encantada propia y resultar vencedor (1/5).</li>
+<li>• Realizar una aventura referente al desarrollo del Modismo Mágico.</li>
+</ul>
+<div class="progress"><b>Progreso: 4 / 6 requisitos</b><div class="bar"><div class="fill" style="width:66%"></div></div></div>
+</div>
+
+</div>
+</div>
+<script>
+function showPanel(id,b){
+document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('.menu button').forEach(x=>x.classList.remove('active'));
+b.classList.add('active');
+}
+</script>
+</body>
+</html>
