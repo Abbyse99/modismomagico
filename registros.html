@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro de Prendas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+background:radial-gradient(circle at center,#141018 0%,#070609 60%,#000 100%);
+font-family:'Cinzel',serif;
+color:#f2edf7;
+padding:40px 15px;
+}
+.grimorio{
+max-width:820px;
+margin:35px auto;
+padding:22px;
+background:linear-gradient(180deg,#0b0910,#050506);
+border:1px solid rgba(184,140,255,.12);
+box-shadow:0 0 80px rgba(120,90,170,.12);
+position:relative;
+}
+.esquina{position:absolute;color:rgba(184,140,255,.18);font-size:18px}
+.e1{top:8px;left:8px}.e2{top:8px;right:8px}.e3{bottom:8px;left:8px}.e4{bottom:8px;right:8px}
+
+.titulo{text-align:center;padding:8px 0 12px}
+.titulo:before,.titulo:after{
+content:"";
+display:block;
+width:78%;
+height:1px;
+margin:6px auto;
+background:linear-gradient(90deg,transparent,rgba(184,140,255,.6),transparent);
+box-shadow:0 0 12px rgba(184,140,255,.35);
+}
+.sello{
+font-size:.72rem;
+letter-spacing:4px;
+color:#cdb9ea;
+animation:brillo 4s ease-in-out infinite;
+}
+@keyframes brillo{
+0%,100%{opacity:.5}
+50%{opacity:1;text-shadow:0 0 16px rgba(184,140,255,.8)}
+}
+h1{
+font-family:'UnifrakturMaguntia',serif;
+font-size:2.3rem;
+font-weight:400;
+color:#f5eeff;
+text-shadow:0 0 18px rgba(180,120,255,.45);
+margin:8px 0;
+}
+.simbolo{color:#cdb9ea;font-size:.8rem;letter-spacing:3px}
+.desc{
+font-size:.68rem;
+line-height:1.8;
+color:#d3c7e5;
+text-align:center;
+margin:10px auto 18px;
+max-width:680px;
+}
+.panel{display:flex;flex-direction:column;gap:14px}
+.bloque{
+padding:14px;
+background:rgba(184,140,255,.03);
+border:1px solid rgba(184,140,255,.12);
+}
+h2{
+font-size:.88rem;
+letter-spacing:2px;
+color:#dfc4ff;
+text-align:center;
+margin-bottom:8px;
+}
+p{
+font-size:.68rem;
+line-height:1.8;
+color:#d3c7e5;
+text-align:center;
+margin-bottom:10px;
+}
+.c{text-align:center}
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:240px;
+height:38px;
+font-size:.64rem;
+letter-spacing:1.5px;
+text-decoration:none;
+color:#fff;
+background:linear-gradient(180deg,rgba(90,60,140,.95),rgba(45,28,75,.95));
+border:1px solid rgba(220,190,255,.35);
+box-shadow:0 0 12px rgba(184,140,255,.2);
+}
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 0 20px rgba(184,140,255,.35);
+}
+</style>
+</head>
+<body>
+
+<div class="grimorio">
+
+<div class="esquina e1">❈</div>
+<div class="esquina e2">❈</div>
+<div class="esquina e3">❈</div>
+<div class="esquina e4">❈</div>
+
+<div class="titulo">
+<div class="sello">✠ ☾ ✦ ☽ ✠</div>
+<div class="simbolo">═════ ❈ ═════</div>
+<h1>Registro de Prendas</h1>
+<div class="simbolo">═════ ❈ ═════</div>
+</div>
+
+<div class="desc">
+Desde este registro podrás gestionar los encargos realizados en Nocturna Atelier. Selecciona las mejoras que deseas incorporar a tu prenda o registra los combates en los que la hayas utilizado para que su historial quede archivado.
+</div>
+
+<div class="panel">
+
+<div class="bloque">
+<h2>✦ SELECCIÓN DE MEJORAS ✦</h2>
+<p>Completa este formulario indicando la prenda y las mejoras que deseas incorporar. La modista revisará la solicitud antes de realizar el encantamiento.</p>
+<div class="c">
+<a class="btn" href="https://forms.gle/UeSnXHRA15zbdAU97" target="_blank">
+✦ ACCEDER AL FORMULARIO ✦
+</a>
+</div>
+</div>
+
+<div class="bloque">
+<h2>✦ REGISTRO DE COMBATES ✦</h2>
+<p>Registra los combates en los que hayas utilizado tu prenda encantada e incluye el enlace al roleo. El historial de la prenda podrá dar acceso a futuros descuentos, según determine la modista.</p>
+<div class="c">
+<a class="btn" href="https://forms.gle/khsNF3PeddjRGKKo9" target="_blank">
+✦ REGISTRAR COMBATE ✦
+</a>
+</div>
+</div>
+
+</div>
+</div>
+</body>
+</html>
